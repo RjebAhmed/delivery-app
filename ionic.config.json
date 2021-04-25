@@ -1,0 +1,7 @@
+{
+  "name": "mp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
