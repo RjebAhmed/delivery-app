@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>admin</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let order of orders">
+    <div class="cont">
+      <h1>{{order.id}}</h1>
+      <div
+        class="prod"
+        *ngFor="let item of order.items; let i = index"
+        [attr.data-index]="i"
+      >
+        <div class="C1">
+          <div class="L1">
+            <img src="..\assets\burger.png" alt="" />
+            <h2>{{item.nom}}</h2>
+            <p>{{item.autre}}</p>
+          </div>
+        </div>
+        <div class="C2">
+          <span> {{item.quantite}}</span>
+
+          <span>{{item.prix}} DT</span>
+        </div>
+      </div>
+      <div class="total">
+        <span>Total</span>
+        <span>{{order.total}} DT</span>
+      </div>
+      <div class="buttons">
+        <ion-button expand="full" (click)="accept(order.id)" color="success">
+          <div class="icon">
+            <i class="fa fa-check"></i>
+          </div>
+        </ion-button>
+        <ion-button expand="full" (click)="refuse(order.id,order.userID)" color="danger">
+          <div class="icon">
+            <i class="fa fa-times"></i>
+          </div>
+        </ion-button>
+
+        
+      </div>
+    </div>
+  </div>
+</ion-content>

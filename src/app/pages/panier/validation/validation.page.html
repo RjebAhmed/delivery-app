@@ -1,0 +1,49 @@
+<ion-toolbar color="#11c0a0" padding-start="">
+  <ion-title routerLink="/categories" slot="start"
+    ><ion-icon name="caret-back-outline"></ion-icon
+  ></ion-title>
+  <ion-title slot="start" class="center"> Validation </ion-title>
+</ion-toolbar>
+
+<div *ngIf="etat==''" class="spinner-box">
+  <div class="configure-border-1">
+    <div class="configure-core"></div>
+  </div>
+  <div class="configure-border-2">
+    <div class="configure-core"></div>
+  </div>
+</div>
+<div class="msg" *ngIf="etat==''">
+  <h1>
+    <span style="color: #ffe368">Veuillez patienter</span> <br />
+    Un administrateur traite votre commande
+  </h1>
+</div>
+<div class="msg" *ngIf="etat=='accepter'">
+  <h1>
+    <span style="color: #4bb543">Succès</span> <br />
+    Vous seras redirecté au commande en cours
+  </h1>
+</div>
+<div class="msg" *ngIf="etat=='refuser'">
+  <h1>
+    <span style="color: #ca0b00">échouer</span> <br />
+    Vous seras redirecté au chat pour plus de détails
+  </h1>
+</div>
+
+<div class="page-wrapper">
+  <div class="circle-wrapper" *ngIf="etat=='accepter'">
+    <div class="success circle"></div>
+    <div class="icon">
+      <i class="fa fa-check"></i>
+    </div>
+  </div>
+
+  <div class="circle-wrapper" *ngIf="etat=='refuser'">
+    <div class="error circle"></div>
+    <div class="icon">
+      <i class="fa fa-times"></i>
+    </div>
+  </div>
+</div>

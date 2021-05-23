@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>avis</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  hello world!!
+  <div *ngFor="let av of avis">
+    <h1>{{av.date}}</h1>
+    <h1>{{av.nom}}</h1>
+    <h1>{{av.stars}}</h1>
+    <h1>{{av.avie}}</h1>
+    <ion-button color="success" (click)="accepter(av.id)">accepter</ion-button>
+    <ion-button color="danger" (click)="refuser(av.id)">refuser</ion-button>
+
+  </div>
+</ion-content>

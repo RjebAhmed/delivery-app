@@ -1,0 +1,195 @@
+ion-icon {
+  font-size: 40px;
+  padding-right: 2%;
+}
+
+ion-toolbar h1 {
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 1%;
+  top: -30%;
+  z-index: 99999999;
+  color: #11c0a0;
+}
+ion-toolbar {
+  padding-right: 4%;
+}
+ion-conten {
+  border: none;
+  box-shadow: none;
+}
+/* KEYFRAMES */
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes configure-clockwise {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes configure-xclockwise {
+  0% {
+    transform: rotate(45deg);
+  }
+  25% {
+    transform: rotate(-45deg);
+  }
+  50% {
+    transform: rotate(-135deg);
+  }
+  75% {
+    transform: rotate(-225deg);
+  }
+  100% {
+    transform: rotate(-315deg);
+  }
+}
+
+.spinner-box {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  position: absolute;
+  top: 30%;
+  left: 35%;
+}
+
+/* X-ROTATING BOXES */
+
+.configure-border-1 {
+  width: 115px;
+  height: 115px;
+  padding: 3px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffe368;
+  animation: configure-clockwise 3s ease-in-out 0s infinite alternate;
+}
+
+.configure-border-2 {
+  width: 115px;
+  height: 115px;
+  padding: 3px;
+  left: -115px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #11c0a0;
+  transform: rotate(45deg);
+  animation: configure-xclockwise 3s ease-in-out 0s infinite alternate;
+}
+
+.configure-core {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+.msg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 85%;
+  color: black;
+}
+.msg h1 {
+  font-size: 1.9rem;
+  color: black;
+  line-height: 40px;
+  font-weight: 500;
+}
+.msg h1 span {
+  font-weight: 700;
+
+  line-height: 70px;
+}
+.circle-wrapper {
+  position: absolute;
+  top: 25%;
+  width: 173px;
+  height: 173px;
+  float: left;
+  margin: 10px;
+}
+
+.icon {
+  position: absolute;
+  color: #fff;
+  font-size: 85px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  padding: 2.5px;
+  background-clip: content-box;
+  animation: spin 10s linear infinite;
+}
+
+.circle-wrapper:active .circle {
+  animation: spin 2s linear infinite;
+}
+
+.success {
+  background-color: #4bb543;
+  border: 2.5px dashed #4bb543;
+}
+
+.error {
+  background-color: #ca0b00;
+  border: 2.5px dashed #ca0b00;
+}
+
+.warning {
+  background-color: #f0d500;
+  border: 2.5px dashed #f0d500;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.page-wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

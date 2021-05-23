@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>avis</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<input type="number" placeholder="stars number" name="stars" [(ngModel)]="stars"> 
+<br>
+<input type="text " placeholder="avis" [(ngModel)]="avis"> 
+<br>
+<ion-button (click)="addAvis()">add me</ion-button>
+</ion-content>

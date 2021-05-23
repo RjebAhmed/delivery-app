@@ -1,0 +1,18 @@
+<div class="lds-facebook">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+<h1>please wait,, una admin is checkingyour order</h1>
+<div *ngFor="let order of list">
+  <ion-icon
+    class="suc"
+    *ngIf="order.etat=='accepter'"
+    name="checkmark-circle-outline"
+  ></ion-icon>
+  <ion-icon
+    class="ref"
+    *ngIf="order.etat=='refuser'"
+    name="checkmark-circle-outline"
+  ></ion-icon>
+</div>

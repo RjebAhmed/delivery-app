@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class="cont">
+  <div class="title">
+    Modidier mon profile
+  </div>
+  <div class="item" (click)="toNom()">
+    <div class="content">
+      <div class="titre">Nom</div>
+      <div class="subTitre">
+        {{nom}}
+      </div>
+    </div>
+    <div class="icon">
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </div>
+  </div>
+  <div class="item" (click)="toAdresse()">
+    <div class="content">
+      <div class="titre">Adresse</div>
+      <div class="subTitre">
+        {{adresse}}
+      </div>
+    </div>
+    <div class="icon">
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </div>
+  </div>
+  <div class="item" (click)="toEmail()">
+    <div class="content">
+      <div class="titre">Email</div>
+      <div class="subTitre">
+        {{email}}
+      </div>
+    </div>
+    <div class="icon">
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </div>
+  </div>
+  <div class="item" (click)="toTel()">
+    <div class="content">
+      <div class="titre">Telephone</div>
+      <div class="subTitre">
+        {{tel}}
+      </div>
+    </div>
+    <div class="icon">
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </div>
+  </div>
+  <div class="item" (click)="toPassword()">
+    <div class="content">
+      <div class="titre">mot de pass</div>
+      <div class="subTitre">
+        *******
+      </div>
+    </div>
+    <div class="icon">
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </div>
+  </div>
+  
+</div>
+</ion-content>

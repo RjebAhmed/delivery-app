@@ -1,0 +1,90 @@
+ion-icon {
+  font-size: 40px;
+  padding-right: 2%;
+}
+
+ion-toolbar h1 {
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 1%;
+  top: -30%;
+  z-index: 99999999;
+  color: #11c0a0;
+}
+ion-toolbar {
+  padding-right: 4%;
+}
+ion-conten {
+  border: none;
+  box-shadow: none;
+}
+.bg {
+  background: linear-gradient(#11c0a0, white);
+}
+.form-floating {
+  box-shadow: 0 0 7pt 0.5pt #11c0a0;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  color: rgb(174, 172, 191);
+  font-size: 18px;
+  margin-bottom: 25px !important;
+}
+form {
+  position: relative;
+  left: 10%;
+  top: 50px;
+}
+.title h1 {
+  text-align: center;
+  margin-top: 20%;
+  font-size: 38px;
+  font-weight: 500;
+}
+input {
+  color: gray !important;
+  height: 60px !important;
+  font-size: 18px !important;
+  font-weight: 700;
+}
+.camera {
+  width: 100px;
+  height: 100px;
+  box-shadow: 0 0 7pt 0.5pt #11c0a0;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -60%;
+}
+.camera img {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+}
+.camera h1 {
+  position: relative;
+  top: -70%;
+  left: 115%;
+  width: 220px;
+  text-align: center;
+  color: rgb(174, 172, 191);
+}
+.panierButton {
+  width: 65%;
+  height: 65px;
+  background-color: #11c0a0;
+  font-size: 25px;
+  color: white;
+  border-radius: 40px;
+  position: absolute;
+  bottom: -45%;
+  left: 8%;
+}

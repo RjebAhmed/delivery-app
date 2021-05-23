@@ -25,3 +25,13 @@
 #container a {
   text-decoration: none;
 }
+ion-tab-button {
+  --background-focused: #11c0a0;
+  --color-selected: #11c0a0;
+}
+ion-icon{
+  font-size: 2rem;
+}
+ion-label{
+  font-size: .8rem;
+}

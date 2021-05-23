@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>chat</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+      <div id="chat-message-list" *ngIf="!(ID=='rgFRcn82bkhHvkEptnm4r9kC6kj2')">
+        <ion-content >
+          <ion-infinite-scroll position="top">
+        <div class="message-row " *ngFor="let m of conv" 
+        [ngClass]="!m.sender ? 'you-message' : 'other-message'"
+        >
+          <div class="message-text">{{m.message}} </div>
+          <div class="message-line">{{m.date}}</div>
+      
+        </div>
+        
+      </ion-infinite-scroll>
+    </ion-content> 
+      </div>
+      <div id="chat-message-list" *ngIf="(ID=='rgFRcn82bkhHvkEptnm4r9kC6kj2')">
+        <ion-content >
+          <ion-infinite-scroll position="top">
+        <div class="message-row " *ngFor="let m of conv" 
+        [ngClass]="m.sender ? 'you-message' : 'other-message'"
+        >
+          <div class="message-text">{{m.message}} </div>
+          <div class="message-line">{{m.date}}</div>
+      
+        </div>
+      </ion-infinite-scroll>
+    </ion-content> 
+      </div>
+
+ 
+
+
+
+  <div class="buttom">
+    <div class="file">
+      <ion-icon name="attach-outline"></ion-icon>
+    </div>
+   
+    <div class="in">
+      <ion-input placeholder="Ecrivez un message" type="text" name="msg" [(ngModel)]="msg"></ion-input>
+    </div>
+    <div class="send" (click)="sendMsg()">
+      <ion-icon name="send"></ion-icon>
+    </div>
+    <!-- <input type="text" name="msg" [(ngModel)]="msg" />
+    <button (click)="sendMsg()">click</button> -->
+  </div>
+</ion-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

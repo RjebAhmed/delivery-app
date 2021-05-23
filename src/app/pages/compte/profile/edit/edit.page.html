@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>edit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div  class="cont" *ngIf="change =='nom'" >
+    <div >
+      <div class="title">
+        Modifier le nom
+      </div>
+    </div>
+  
+    <ion-item>
+      <ion-label>Nouvelle nom</ion-label>
+      <ion-input placeholder="Ahmed rjeb" [(ngModel)]="nom"></ion-input>
+    </ion-item>
+    
+    <ion-button  (click)="updateNom()" color="azra9" expand="full" >sauvgarder</ion-button>
+  </div>
+  <div  class="cont" *ngIf="change =='adresse'">
+    <div >
+      <div class="title">
+        Modifier l'adresse
+      </div>
+    </div>
+  
+    <ion-item>
+      <ion-label>Nouvelle adresse</ion-label>
+      <ion-textarea [(ngModel)]="adresse" rows="3" cols="20" placeholder="Gabes sud"></ion-textarea>
+    </ion-item>
+    
+    <ion-button  (click)="updateAdresse()" color="azra9" expand="full" >sauvgarder</ion-button>
+  </div>
+  <div  class="cont" *ngIf="change =='tel'">
+    <div >
+      <div class="title">
+        Modifier telephone
+      </div>
+    </div>
+  
+    <ion-item>
+      <ion-label>Nouvelle numero</ion-label>
+      <ion-input [(ngModel)]="tel" placeholder="27340156"></ion-input>
+    </ion-item>
+    
+    <ion-button  (click)="updateTel()" color="azra9" expand="full" >sauvgarder</ion-button>
+  </div>
+  <div  class="cont" *ngIf="change =='password'">
+    <div >
+      <div class="title">
+        Modifier le mot de pass
+      </div>
+    </div>
+  
+    <ion-item>
+      <ion-label>courant</ion-label>
+      <ion-input type="password" [(ngModel)]="oldPassword" placeholder=""></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label  >nouveaux</ion-label>
+      <ion-input type="password" placeholder="" [(ngModel)]="password"></ion-input>
+    </ion-item>
+    
+    <ion-button  (click)="updatePassword()" color="azra9" expand="full" >sauvgarder</ion-button>
+  </div>
+    <div  class="cont" *ngIf="change =='email'">
+    <div >
+      <div class="title">
+        Modifier l'email
+      </div>
+    </div>
+  (click)="update()"
+    
+    <ion-item>
+      <ion-label  >email courant</ion-label>
+      <ion-input placeholder="" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    
+    <ion-button  (click)="updateEmail()" color="azra9" expand="full" >sauvgarder</ion-button>
+  </div>
+</ion-content>

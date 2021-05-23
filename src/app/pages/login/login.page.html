@@ -1,0 +1,36 @@
+<body>
+  <div class="half">
+    <h2>Login</h2>
+  </div>
+  <div class="bg"></div>
+  <form autocomplete="off" #form="ngForm" (submit)="login(form)">
+    <div class="logo">
+      <ion-icon name="person"></ion-icon>
+    </div>
+
+    <ion-item>
+      <ion-input
+        placeholder="Email"
+        [(ngModel)]="email"
+        name="email"
+        type="email"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        placeholder="Mot de passe"
+        name="password"
+        type="password"
+        [(ngModel)]="password"
+      ></ion-input>
+    </ion-item>
+    <ion-button type="submit" color="azra9" expand="block" >Login</ion-button>
+  </form>
+  <h1 routerLink="/forgot-password">Forgot assword</h1>
+  <ion-icon
+  
+    routerLink="/accueil"
+    class="exit"
+    name="close-circle-outline"
+  ></ion-icon>
+</body>

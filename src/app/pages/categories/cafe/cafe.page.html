@@ -1,0 +1,84 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>fastfood</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+ -->
+
+<!-- <ion-toolbar color="#11c0a0">
+    <ion-buttons slot="start">
+      <ion-title> 
+        <ion-icon name="caret-back-outline"></ion-icon>
+      </ion-title>
+
+    </ion-buttons>
+  </ion-toolbar>
+
+
+ -->
+
+<ion-toolbar color="#11c0a0" padding-start="">
+  <ion-title routerLink="/categories" slot="start"
+    ><ion-icon name="caret-back-outline"></ion-icon
+  ></ion-title>
+  <ion-title slot="start" class="center"> Cafe</ion-title>
+  <h1 slot="end">20</h1>
+  <ion-icon slot="end" name="cart-outline" routerLink="/panier"></ion-icon>
+</ion-toolbar>
+
+<ion-content>
+  <div class="title">
+    <h1>Cafe</h1>
+  </div>
+  <div>
+    <form class="test">
+      <div class="form-floating mb-3">
+        <input
+          autocomplete="off"
+          type="text"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+        />
+        <label for="floatingInput">Type de cafe </label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          autocomplete="off"
+          type="text"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+        />
+        <label for="floatingInput">Quantité</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          autocomplete="off"
+          type="text"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+        />
+        <label for="floatingInput">Prix ​​approximatif (DT)</label>
+      </div>
+      <div class="form-floating">
+        <input
+          autocomplete="off"
+          style="height: 80px !important"
+          type="text"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="Password"
+        />
+        <label for="floatingPassword">Autre recommendation ?</label>
+      </div>
+      <div class="camera">
+        <img src="..\assets\camera.png" alt="" />
+        <h1>ajouter une photo du produit</h1>
+      </div>
+      <button class="panierButton">Ajouter au panier</button>
+    </form>
+  </div>
+</ion-content>

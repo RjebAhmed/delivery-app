@@ -1,0 +1,57 @@
+<body>
+  <div class="half">
+    <h1>Sing up</h1>
+  </div>
+  <form autocomplete="off" #form="ngForm" (submit)="signup(form)">
+    <div class="logo">
+      <ion-icon name="person"></ion-icon>
+    </div>
+
+    <ion-item>
+      <ion-input
+        placeholder="Nom"
+        [(ngModel)]="nom"
+        name="nom"
+        type="text"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        placeholder="Email"
+        [(ngModel)]="email"
+        name="email"
+        type="Email"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        placeholder="Téléphone"
+        [(ngModel)]="tel"
+        name="tel"
+        type="number"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        placeholder="adresse"
+        name="adresse"
+        [(ngModel)]="adresse"
+        type="text"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        placeholder="Mot de passe"
+        name="password"
+        type="password"
+        [(ngModel)]="password"
+      ></ion-input>
+    </ion-item>
+    <ion-button type="submit" color="azra9" expand="block">Sing up</ion-button>
+  </form>
+  <ion-icon
+    routerLink="/accueil"
+    class="exit"
+    name="close-circle-outline"
+  ></ion-icon>
+</body>

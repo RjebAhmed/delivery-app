@@ -1,0 +1,36 @@
+
+.title {
+    margin-top: 15%;
+    padding-left: 5%;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 7%;
+}
+.item {
+    padding: 5% 0% 5% 5% ;
+ 
+  width: 100%;
+  border-bottom: 1px solid rgba(112, 110, 110, 0.678);
+  display: flex;
+}
+.content{
+flex: 8;
+}
+.icon{
+height: 100%;
+    flex: 1;
+    position: relative;
+  display: grid;
+    align-self: center;
+    color: #777;
+    font-size: 1.8rem;
+  
+}
+.titre{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.subTitre{
+    font-size: 1.2rem;
+    color: #777;
+}

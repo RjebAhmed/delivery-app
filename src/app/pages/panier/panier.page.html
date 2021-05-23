@@ -1,0 +1,54 @@
+<ion-toolbar color="#11c0a0" padding-start="30">
+  <ion-title slot="start">Panier</ion-title>
+  <h1 slot="end">{{items.length}}</h1>
+  <ion-icon slot="end" name="cart-outline" routerLink="/panier"></ion-icon>
+</ion-toolbar>
+
+<ion-content>
+  <div class="cont">
+    <div
+      class="prod"
+      *ngFor="let item of items; let i = index"
+      [attr.data-index]="i"
+    >
+      <div class="C1">
+        <div class="L1">
+          <img src="" alt="" />
+          <h2>{{item.nom}}</h2>
+          <p>{{item.autre}}</p>
+        </div>
+
+        <ion-icon name="heart-outline"></ion-icon>
+      </div>
+      <div class="C2">
+        <button (click)="deleteItem(item.nom)">
+          <ion-icon name="trash-outline"></ion-icon>
+        </button>
+        <div class="qte">
+          <span (click)="min(i,item.nom)" class="ed">-</span>
+          <span class="num" #selector2>{{item.quantite}}</span>
+          <span (click)="add(i,item.nom)" class="ed">+</span>
+        </div>
+        <span class="price" #selector>{{item.prix}} </span
+        ><span class="price">DT</span>
+      </div>
+    </div>
+
+    <div class="total">
+      <div class="totalPrice">
+        <div class="txt">Total</div>
+
+        <div class="prix">{{total}} DT</div>
+      </div>
+      <div class="totalPrice">
+        <div class="txt">Total + Tax (20%)</div>
+
+        <div class="prix">{{total + 0.2*total}} DT</div>
+      </div>
+      <div class="buttons">
+        <button (click)="validez()">Valiedez la commande</button>
+        <button class="btn2">Appelez</button>
+      </div>
+    </div>
+  </div>
+</ion-content>

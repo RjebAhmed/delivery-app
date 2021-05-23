@@ -1,0 +1,74 @@
+<ion-toolbar color="red" padding-start="30">
+  <ion-title slot="start">Compte</ion-title>
+  <h1 slot="end">9</h1>
+  <ion-icon slot="end" name="cart-outline" routerLink="/panier"></ion-icon>
+</ion-toolbar>
+<body>
+  <div class="top">
+    <ion-avatar *ngIf="!user">
+      <img src="..\assets\icons8-general-mandatory-action-48.png" />
+    </ion-avatar>
+    <ion-avatar *ngIf="!image  && user">
+      <img
+        onclick="document.getElementById('selector').click();"
+        src="..\assets\camera.png"
+      />
+      <input
+        (change)="onselectFile($event)"
+        id="selector"
+        type="file"
+        name="name"
+        style="display: none"
+      />
+    </ion-avatar>
+    <ion-avatar *ngIf="image  && user">
+      <img [src]=" image | async" />
+    </ion-avatar>
+    <span *ngIf="!user" class="user" routerLink="/login">Login / SignUp</span>
+    <span *ngIf="user" routerLink="/login">{{nom}}</span>
+  </div>
+  <div class="cont">
+    <div class="item" *ngIf="user" class="item" routerLink="commande-en-cours">
+      <ion-icon name="alarm-outline"></ion-icon>
+      <span>commandes en cours </span>
+    </div>
+    <div class="item" *ngIf="!user" class="item" (click)="presentAlert()">
+      <ion-icon name="alarm-outline"></ion-icon>
+      <span>commandes en cours </span>
+    </div>
+    <div *ngIf="user" class="item" routerLink="mes-commandes">
+      <ion-icon name="cube-outline"></ion-icon>
+      <span>Mes commandes </span>
+    </div>
+    <div *ngIf="!user" class="item" (click)="presentAlert()">
+      <ion-icon name="cube-outline"></ion-icon>
+      <span>Mes commandes </span>
+    </div>
+
+    <div class="item" *ngIf="!user" class="item" (click)="presentAlert()">
+      <ion-icon name="star-half-outline"></ion-icon>
+      <span>Ajouter un avis</span>
+    </div>
+    <div class="item" *ngIf="user" routerLink="avis">
+      <ion-icon name="star-half-outline"></ion-icon>
+      <span>Ajouter un avis</span>
+    </div>
+    <div class="item" *ngIf="user" class="item" routerLink="profile">
+      <ion-icon name="settings-outline"></ion-icon>
+      <span>modifiez profile </span>
+    </div>
+    <div *ngIf="!user" class="item" (click)="presentAlert()">
+      <ion-icon name="settings-outline"></ion-icon>
+      <span>modifiez profile </span>
+    </div>
+    <div class="item" (click)="test()">
+      <ion-icon name="bookmarks-outline"></ion-icon>
+      <span>Articles sauvegardés </span>
+    </div>
+    <div class="item" (click)="logout()">
+      <ion-icon name="log-out-outline"></ion-icon>
+      <span>Se déconnecter </span>
+    </div>
+  </div>
+  <div class="bg"></div>
+</body>

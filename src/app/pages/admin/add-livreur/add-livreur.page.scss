@@ -1,0 +1,79 @@
+body {
+    background-color: #11c0a0;
+  }
+  .half {
+    background-color: white;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -20%;
+  }
+  .half h1 {
+    position: relative;
+    text-align: center;
+left: 50%;
+transform: translateX(-50%);
+top: 67%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    width: 70%;
+  }
+  form {
+    position: absolute;
+    width: 85%;
+    height: 420px;
+    background-color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 7px;
+    padding: 0 10%;
+  }
+  .logo {
+    width: 89px;
+    height: 90px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+      rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-radius: 50%;
+    font-size: 3rem;
+  
+    position: relative;
+    left: 50%;
+    top: -10%;
+    transform: translatex(-50%);
+    background-color: white;
+  }
+  
+  .logo ion-icon {
+    position: relative;
+    left: 50%;
+    top: 43%;
+    transform: translate(-50%, -50%);
+  }
+  ion-input {
+    text-align: center;
+  }
+  
+  ion-item {
+    --highlight-color-focused: #11c0a0;
+  }
+  form ion-button {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 15%;
+    width: 50%;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+      rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  }
+  .exit {
+    color: #5d6b6364;
+    font-size: 3.2rem;
+    position: absolute;
+    left: 85%;
+  }
+  

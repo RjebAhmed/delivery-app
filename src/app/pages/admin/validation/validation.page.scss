@@ -1,0 +1,90 @@
+.cont {
+  margin-top: 20px;
+  width: 90%;
+  position: relative;
+  transform: translateX(-50%);
+  border: 2px solid rgba(80, 72, 72, 0.378);
+  left: 50%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.cont h1 {
+  text-align: center;
+  font-size: 1.1rem;
+}
+.total {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+  padding: 15px 0;
+
+  border-top: 2px solid lightgray;
+  border-bottom: 2px solid lightgray;
+}
+.prod {
+  // padding: 5%;
+
+  background-color: white;
+  width: 80%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 10px;
+  margin-top: 50px;
+  overflow: hidden;
+}
+.C1 {
+  display: flex;
+}
+.L1 {
+  padding: 10px 0 0 15px;
+  width: 90%;
+}
+.L1 img {
+  position: relative;
+  left: 50%;
+  transform: translatex(-50%);
+  width: 65%;
+}
+.L1 h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+.C2 {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 10px;
+  color: #11c0a0;
+}
+.C2 span {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.C1 ion-icon {
+  font-size: 3.5rem;
+  padding: 10px 10px 0 0;
+  color: #11c0a0;
+}
+.buttons {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  // position: relative;
+  // left: -1%;
+}
+.buttons ion-button {
+  width: 50%;
+  height: 60px;
+  padding: 0;
+  margin: 0;
+}
+.buttons ion-button ion-icon {
+  font-size: 3.5rem;
+}
+
+.icon {
+  font-size: 25px;
+}
