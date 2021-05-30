@@ -39,10 +39,7 @@ const routes: Routes = [
     path: 'livreur',
     loadChildren: () => import('./pages/livreur/livreur.module').then(m => m.LivreurPageModule)
   },
-  {
-    path: 'mes-commandes',
-    loadChildren: () => import('./pages/comptes/mes-commandes/mes-commandes.module').then(m => m.MesCommandesPageModule)
-  },
+
 
 
 

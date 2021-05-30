@@ -1,11 +1,12 @@
 <ion-toolbar color="#11c0a0" padding-start="30">
   <ion-title slot="start">Accueil</ion-title>
-  <h1 slot="end">20</h1>
+  <h1 slot="end">{{items.length}}</h1>
   <ion-icon slot="end" name="cart-outline" routerLink="/panier"></ion-icon>
 </ion-toolbar>
 
 <ion-content>
-  <ion-content>
+  <!-- avissssssssssssssssssssssssssssssssss -->
+  <!-- <ion-content>
     <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
       <ion-refresher-content></ion-refresher-content>
     </ion-refresher>
@@ -15,39 +16,95 @@
       <h1>{{av.stars}}</h1>
       <h1>{{av.avie}}</h1>
     </div>
-  </ion-content>
+    <ion-button>get my location :D</ion-button>
+  </ion-content> -->
+  <div class="cont">
+    <div class="commande">
+      <div class="top"></div>
+      <div class="contents">
+        <div class="left">
+          <div class="half"></div>
+        </div>
+        <div class="right">
+          <div class="produit">
+            <div class="prod">
+              <div class="title">
+                <img
+                  class="image"
+                  src="..\assets\icons8-sphere-48.png"
+                  alt=""
+                />
+                <span class="text">Sandwich mlewi</span>
+              </div>
+              <div class="description">double pate menghire slayet ou 7ar</div>
+            </div>
+            <ion-icon name="close-circle-sharp"></ion-icon>
 
+            <div class="top-left">
+              <div class="qte">2</div>
+              <div class="pm">
+                <ion-icon name="add-circle-outline"></ion-icon>      
+                <ion-icon name="remove-circle-outline"></ion-icon>
+              </div>
+            </div>
+          </div>
+          <div class="produit">
+            <div class="prod">
+              <div class="title">
+                <img
+                  class="image"
+                  src="..\assets\icons8-sphere-48.png"
+                  alt=""
+                />
+                <span class="text">Sandwich mlewi</span>
+              </div>
+              <div class="description">double pate menghire slayet ou 7ar</div>
+            </div>
+            <ion-icon name="close-circle-sharp"></ion-icon>
 
-  <!-- <div class="cont">
-<div class="hed">
+            <div class="top-left">
+              <div class="qte">2</div>
+              <div class="pm">
+                <ion-icon name="add-circle-outline"></ion-icon>      
+                <ion-icon name="remove-circle-outline"></ion-icon>
+              </div>
+            </div>
+          </div>
+          <div class="produit">
+            <div class="prod">
+              <div class="title">
+                <img
+                  class="image"
+                  src="..\assets\icons8-sphere-48.png"
+                  alt=""
+                />
+                <span class="text">Sandwich mlewi</span>
+              </div>
+              <div class="description">double pate menghire slayet ou 7ar</div>
+            </div>
+            <ion-icon name="close-circle-sharp"></ion-icon>
 
-</div>
-<div class="content">
-<div class="dot">
+            <div class="top-left">
+              <div class="qte">2</div>
+              <div class="pm">
+                <ion-icon name="add-circle-outline"></ion-icon>      
+                <ion-icon name="remove-circle-outline"></ion-icon>
+              </div>
+            </div>
+          </div>
+        
+        
+        </div>
+        
+      </div>
 
-</div>
-<div class="text">
-  lorem5
-</div>
-</div>
-<div class="content">
-  <div class="dot">
-  
-  </div>
-  <div class="text">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, cumque!
-  </div>
-  </div>
-  <div class="content">
-    <div class="dot">
-    
+      <div class="buttom">
+        <div class="mybutton">
+<button>Validez</button>
+        </div>
+        <div class="price">20 DT</div>
+      </div>
+
     </div>
-    <div class="text">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque sint pariatur aspernatur odit quod fugit!
-    </div>
-    </div>
-<div class="fot">
-  
-</div>
-</div> -->
-<!-- </ion-content> -->
+  </div>
+</ion-content>

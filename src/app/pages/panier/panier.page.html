@@ -5,7 +5,7 @@
 </ion-toolbar>
 
 <ion-content>
-  <div class="cont">
+  <!-- <div class="cont">
     <div
       class="prod"
       *ngFor="let item of items; let i = index"
@@ -48,6 +48,63 @@
       <div class="buttons">
         <button (click)="validez()">Valiedez la commande</button>
         <button class="btn2">Appelez</button>
+      </div>
+    </div>
+  </div> -->
+  <div class="cont">
+    <div class="commande">
+      <div class="top"></div>
+      <div class="contents">
+        <div class="left">
+          <div class="half"></div>
+        </div>
+        <div class="right">
+          <div
+            class="produit"
+            *ngFor="let item of items; let i = index"
+            [attr.data-index]="i"
+          >
+            <div class="prod">
+              <span style="display: none" class="price" #selector
+                >{{item.prix}}
+              </span>
+              <div class="title">
+                <img
+                  class="image"
+                  src="..\assets\icons8-sphere-48.png"
+                  alt=""
+                />
+                <span class="text">{{item.nom}}</span>
+              </div>
+              <div class="description">{{item.autre}}</div>
+            </div>
+            <ion-icon
+              (click)="deleteItem(item.nom)"
+              name="close-circle-sharp"
+            ></ion-icon>
+
+            <div class="top-left">
+              <div class="qte" #selector2>{{item.quantite}}</div>
+              <div class="pm">
+                <ion-icon
+                  (click)="add(i,item.nom)"
+                  name="add-circle-outline"
+                ></ion-icon>
+                <ion-icon
+                  (click)="min(i,item.nom)"
+                  name="remove-circle-outline"
+                ></ion-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="buttom">
+        <div class="mybutton">
+          <button (click)="validez()" >Validez</button>
+        </div>
+        <div class="price">{{total}} DT</div>
       </div>
     </div>
   </div>

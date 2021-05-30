@@ -18,29 +18,130 @@ ion-toolbar h1 {
   z-index: 99999999;
   color: #11c0a0;
 }
-.cont{
- width: 70%;
- margin: 10% 10%;
- height: 350px;
- border: 1px solid rgba(0, 0, 0, 0.255);
-} 
-.hed{
-height: 50px;
-background-color: #ffe368;
-width: 100%;
+.cont {
+  margin: 7%;
 }
-.content{
+.commande {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.top {
+  width: 100%;
+  height: 59px;
+  background-color: #ffe368;
+}
+.contents {
   width: 100%;
   display: flex;
-  border: 1px solid gray;
-  min-height: 50px;
 }
-.dot{
-  flex: 2;
-  background-color: azure;
+
+.left {
+  flex: 1;
+  // border-right: 1px solid #777;
+  padding: 0;
 }
-.text{
-  padding: 5px;
+.half {
+  width: 90%;
+  height: 100%;
+  border-right: #ffe368 dotted 5px;
+}
+.right {
+  flex: 10;
+  padding-top: 25px;
+}
+.produit {
+  display: flex;
+  margin-bottom: 25px;
+}
+.prod {
   flex: 7;
 }
-.fot{}
+.dot {
+  font-size: 2rem;
+  color: #ffe368;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: -20%;
+}
+.title {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.description {
+  position: relative;
+  left: 10px;
+  color: #777;
+  font-weight: 700;
+}
+.text {
+}
+.image {
+  width: 25px;
+  height: 25x;
+  position: relative;
+  left: -17px;
+}
+
+.top-left {
+  flex: 2;
+  padding: 5px 0;
+}
+.produit ion-icon {
+  color: #ffe368;
+  font-size: 1.5rem;
+  position: relative;
+  left: 23%;
+  bottom: 12px;
+}
+.qte {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+.pm {
+  margin-left: 5px;
+}
+.pm ion-icon {
+  color: #11c0a0;
+  font-size: 1.4rem;
+  left: 0;
+  bottom: 0;
+}
+.buttom {
+  border-top: 1px solid rgba(119, 119, 119, 0.611);
+  width: 100%;
+  height: 59px;
+  display: flex;
+}
+.mybutton {
+  flex: 5;
+  margin: 0 15%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+}
+.mybutton button{
+  background-color: #ffe368;
+  width: 100px;
+  height: 40px;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 20px;
+}
+.price {
+  margin-right: 07%;
+  flex: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #11c0a0;
+
+}

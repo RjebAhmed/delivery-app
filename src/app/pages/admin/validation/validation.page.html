@@ -3,46 +3,64 @@
     <ion-title>admin</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-  <div *ngFor="let order of orders">
-    <div class="cont">
-      <h1>{{order.id}}</h1>
-      <div
-        class="prod"
-        *ngFor="let item of order.items; let i = index"
-        [attr.data-index]="i"
-      >
-        <div class="C1">
-          <div class="L1">
-            <img src="..\assets\burger.png" alt="" />
-            <h2>{{item.nom}}</h2>
-            <p>{{item.autre}}</p>
+  <div class="cont">
+    <div class="commande" *ngFor="let order of orders">
+      <div class="top">
+        <div class="date">{{order.date}}</div>
+        <div class="time">{{order.time}}</div>
+
+      </div>
+      <div class="contents">
+        <div class="left">
+          <div class="half"></div>
+        </div>
+        <div class="right">
+          <div
+            class="produit"
+            *ngFor="let item of order.items; let i = index"
+            [attr.data-index]="i"
+          >
+            <div class="prod">
+              <span style="display: none" class="price" #selector
+                >{{item.prix}}
+              </span>
+              <div class="title">
+                <img
+                  class="image"
+                  src="..\assets\icons8-sphere-48.png"
+                  alt=""
+                />
+                <span class="text">{{item.nom}}</span>
+              </div>
+              <div class="description">{{item.autre}}</div>
+            </div>
+            <div class="top-left">
+              <div class="qte" #selector2>{{item.quantite}}</div>
+            </div>
           </div>
         </div>
-        <div class="C2">
-          <span> {{item.quantite}}</span>
+      </div>
 
-          <span>{{item.prix}} DT</span>
-        </div>
-      </div>
-      <div class="total">
-        <span>Total</span>
-        <span>{{order.total}} DT</span>
-      </div>
-      <div class="buttons">
-        <ion-button expand="full" (click)="accept(order.id)" color="success">
-          <div class="icon">
-            <i class="fa fa-check"></i>
-          </div>
-        </ion-button>
-        <ion-button expand="full" (click)="refuse(order.id,order.userID)" color="danger">
-          <div class="icon">
-            <i class="fa fa-times"></i>
-          </div>
+      <div class="buttom">
+        <ion-button
+          (click)="accept(order.id)"
+          class="acc"
+          expand="full"
+          color="abyath"
+        >
+          <i class="fa fa-check"></i>
         </ion-button>
 
-        
+        <div class="total">{{order.total}} DT</div>
+        <ion-button
+          (click)="refuse(order.id,order.userID)"
+          class="acc"
+          expand="full"
+          color="abyath"
+        >
+          <i class="fa fa-times"></i>
+        </ion-button>
       </div>
     </div>
   </div>

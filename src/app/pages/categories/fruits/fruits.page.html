@@ -3,7 +3,7 @@
     ><ion-icon name="caret-back-outline"></ion-icon
   ></ion-title>
   <ion-title slot="start" class="center"> Fruit</ion-title>
-  <h1 slot="end">20</h1>
+  <h1 slot="end">{{items.length}}</h1>
   <ion-icon slot="end" name="cart-outline" routerLink="/panier"></ion-icon>
 </ion-toolbar>
 
@@ -15,36 +15,44 @@
     <form class="test">
       <div class="form-floating mb-3">
         <input
+          [(ngModel)]="nom"
+          name="nom"
           autocomplete="off"
           type="text"
           class="form-control"
           id="floatingInput"
           placeholder="name@example.com"
         />
-        <label for="floatingInput">nom du fruit</label>
+        <label for="floatingInput">Qu'est-ce tu veux manger</label>
       </div>
       <div class="form-floating mb-3">
         <input
+          [(ngModel)]="quantite"
+          name="Quantite"
           autocomplete="off"
           type="text"
           class="form-control"
           id="floatingInput"
           placeholder="name@example.com"
         />
-        <label for="floatingInput">Quantité (KG)</label>
+        <label for="floatingInput">Quantité</label>
       </div>
       <div class="form-floating mb-3">
         <input
+          [(ngModel)]="prix"
+          name="prix"
           autocomplete="off"
           type="text"
           class="form-control"
           id="floatingInput"
           placeholder="name@example.com"
         />
-        <label for="floatingInput">Prix ​​approximatif (DT)</label>
+        <label for="floatingInput">Prix ​​approximatif</label>
       </div>
       <div class="form-floating">
-        <input
+        <input width="70%"
+          [(ngModel)]="autre"
+          name="autre"
           autocomplete="off"
           style="height: 80px !important"
           type="text"
@@ -54,11 +62,31 @@
         />
         <label for="floatingPassword">Autre recommendation ?</label>
       </div>
-      <div class="camera">
+      <!-- <div class="camera">
         <img src="..\assets\camera.png" alt="" />
         <h1>ajouter une photo du produit</h1>
-      </div>
-      <button class="panierButton">Ajouter au panier</button>
+      </div> -->
+      <button (click)="setItem()" class="panierButton">
+        Ajouter au panier
+      </button>
+      <!-- <ion-button
+        class="panierButton"
+        (click)="setItem()"
+        color="azra9"
+        expand="full"
+      > -->
+        <!-- Ajouter au panier
+      </ion-button> -->
     </form>
+   <img class="bg1" src="..\assets\fastfood\burgerbg.png" alt="">
+   <img class="bg2" src="..\assets\fastfood\pizza.png" alt="">
+   <img class="bg3" src="..\assets\fastfood\icons8-french-fries-52.png" alt="">
+   <img class="bg4" src="..\assets\fastfood\icons8-hot-dog-128.png" alt="">
+   <img class="bg5" src="..\assets\fastfood\icons8-taco-48.png" alt="">
+   <img class="bg6" src="..\assets\fastfood\icons8-croissant-64.png" alt="">
+
+
+
+
   </div>
 </ion-content>

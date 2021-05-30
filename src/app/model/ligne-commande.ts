@@ -3,4 +3,6 @@ export class LigneCommande {
     orders:string [];
     total:number;
     etat:string;
+    date:number;
+    loc:string[];
 }

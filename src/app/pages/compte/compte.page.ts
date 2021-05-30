@@ -1,3 +1,4 @@
+import { InternalStorageService } from './../../services/internal-storage.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Component, OnInit, ViewChild, ViewChildren, QueryList, ElementRef } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -16,7 +17,23 @@ export class ComptePage implements OnInit {
   id: string;
   image: any = null
   @ViewChild('selector') file: any;
+  items=[]
+  getItems(){
+    this.items=[]
+    this.is.getkeys() .then(result=>{
+      result.value.forEach(element => {
+        this.items.push(element)        
+        
+      });
+     })
+    .catch(err=>{console.log(err.message);
+    })
+    console.log(this.items);
+      
+    
+  }
   constructor(
+    private is:InternalStorageService,
     private auth: AngularFireAuth,
     private db: AngularFirestore,
     private toast: ToastController,

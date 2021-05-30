@@ -43,12 +43,24 @@ export class MesCommandesPage implements OnInit {
             })
             .catch(err => console.log(err.message))
         });
+        var day = new Date(e.payload.doc.data()["date"]).toString().split(' ')[0];
+        var mon = (new Date(e.payload.doc.data()["date"]).getMonth() + 1).toString();
+        var year = new Date(e.payload.doc.data()["date"]).getFullYear().toString();
+        var hours = new Date(e.payload.doc.data()["date"]).getHours().toString();
+
+        var minuts = (new Date(e.payload.doc.data()["date"]).getMinutes()<10?'0':'') + new Date(e.payload.doc.data()["date"]).getMinutes() 
+
+
+        var d = day + " " + mon + " " + year
+        var t = hours + ":" + minuts;
         return {
           items: items,
           userID: e.payload.doc.data()["userID"],
           etat: e.payload.doc.data()["etat"],
           total: e.payload.doc.data()["total"],
-          id: e.payload.doc.id
+          id: e.payload.doc.id,
+          date: d,
+          time: t
         }
       })
     })

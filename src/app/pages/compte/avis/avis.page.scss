@@ -1,0 +1,99 @@
+.back {
+  font-size: 3.8rem;
+  color: white;
+  position: absolute;
+  top: 3%;
+  left: 3%;
+}
+.cont {
+  width: 85%;
+  height: 600px;
+  background-color: white;
+  border-radius: 15px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 15%;
+  z-index: -2;
+}
+ion-avatar {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  top: 9%;
+  transform: translateX(-50%);
+}
+.nom {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  top: 21%;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 29%;
+  font-size: 1.4rem;
+  font-weight: 700;
+  width: 70%;
+  text-align: center;
+}
+.subTite {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 35%;
+  font-size: 1.5rem;
+  width: 77%;
+  font-weight: 600;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.618);
+}
+
+.stars {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 48%;
+  font-size: 3rem;
+  color: #d5d6d8;
+}
+.text {
+  background-color: #f2f3f5;
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 57%;
+  width: 70%;
+  border-radius: 15px;
+  height: 190px;
+}
+.btn{
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 85%;
+    width: 50%;
+    border-radius: 30px;
+    background-color: #ffe368;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+.yel{
+    color: #ffe368;
+}
+.btn:focus{
+    outline: none !important;
+    border: none;
+}

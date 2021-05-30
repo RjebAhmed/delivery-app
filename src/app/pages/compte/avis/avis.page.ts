@@ -10,7 +10,7 @@ import { Avis } from 'src/app/model/avis';
   styleUrls: ['./avis.page.scss'],
 })
 export class AvisPage implements OnInit {
-  stars: number;
+  stars: number=3;
   avis: string;
   constructor(private db: AngularFirestore,
     private auth: AngularFireAuth,
@@ -18,6 +18,11 @@ export class AvisPage implements OnInit {
   ) { }
 
   ngOnInit() {
+  }
+  updateStar(s:number){
+this.stars=s;
+console.log(this.stars);
+
   }
   addAvis() {
     this.loading()

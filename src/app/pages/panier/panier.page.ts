@@ -6,6 +6,7 @@ import { InternalStorageService } from './../../services/internal-storage.servic
 import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import { AlertController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-panier',
@@ -16,16 +17,19 @@ export class PanierPage implements OnInit {
   @ViewChildren('selector') item: QueryList<ElementRef>;
   @ViewChildren('selector2') quantite: QueryList<ElementRef>;
   id: string = "";
-
+  loc: boolean = false;
   qte: number = 1;
-  price: number = 7;
   total: number = 0
   items = [];
   orders = []
   constructor(private is: InternalStorageService,
     private afAuth: AngularFireAuth,
     private router: Router,
-    private db: AngularFirestore
+    private db: AngularFirestore,
+    private toast: ToastController,
+    private alert: AlertController
+
+
 
   ) {
     this.getItems()
@@ -37,77 +41,221 @@ export class PanierPage implements OnInit {
     })
 
   }
+  async presentLoginAlert() {
+    const alert = await this.alert.create({
+      cssClass: 'my-custom-class',
+      header: 'Identification requise',
+      message: `Vous devez vous connecter d'abord `,
+      buttons: [
+        {
+          text: 'annuler',
+          handler: (data: any) => {
+            console.log('Canceled', data);
+          }
+        },
+        {
+          text: 'Login',
+          handler: (data: any) => {
+            this.router.navigate(["/login"])
+          }
+        }
+      ]
+    });
+    await alert.present();
+    const { role } = await alert.onDidDismiss();
+  }
+
+  async presentLcationAlert(uid) {
+    const alert = await this.alert.create({
+      cssClass: 'my-custom-class',
+      header: `Choix d'adresse`,
+      message: `Vous pouvez choisir entre suivre votre emplacement (GPS) ou utiliser votre adresse précédemment entrer `,
+      buttons: [
+        {
+          text: 'Mon address',
+          handler: (data: any) => {
+
+
+            var d: Date = new Date;
+            console.log("heloooooo noooooooo");
+
+            for (let i = 0; i < this.items.length; i++) {
+              this.db.collection("Produits").add(this.items[i])
+                .then(prod => {
+                  this.orders.push(prod.id)
+
+                  if (i == this.items.length - 1) {
+                    let lc: LigneCommande = { loc: [], date: d.getTime(), userID: uid, total: this.total, orders: this.orders, etat: "" }
+                    console.log(lc);
+
+                    this.db.collection("Lignecommande").add(lc)
+                      .then(lcc =>
+                        this.router.navigate(["/panier/validation"], { state: { id: lcc.id } }))
+                      .catch(err => console.log(err.message))
+                  }
+
+                })
+
+                .catch(err => console.log(err.message))
+            }
+
+          }
+        },
+        {
+          text: 'Truck my location',
+          handler: (data: any) => {
+            var d: Date = new Date;
+            console.log("heloooooo noooooooo");
+            var lo = []
+            navigator.geolocation.getCurrentPosition(position => {
+              lo.push(position.coords.latitude, position.coords.longitude)
+            })
+            for (let i = 0; i < this.items.length; i++) {
+              this.db.collection("Produits").add(this.items[i])
+                .then(prod => {
+                  this.orders.push(prod.id)
+
+                  if (i == this.items.length - 1) {
+                    let lc: LigneCommande = { loc: lo, date: d.getTime(), userID: uid, total: this.total, orders: this.orders, etat: "" }
+                    console.log(lc);
+
+                    this.db.collection("Lignecommande").add(lc)
+                      .then(lcc =>
+                        this.router.navigate(["/panier/validation"], { state: { id: lcc.id } }))
+                      .catch(err => console.log(err.message))
+                  }
+
+                })
+
+                .catch(err => console.log(err.message))
+            }
+          }
+        }
+      ]
+    });
+    await alert.present();
+    const { role } = await alert.onDidDismiss();
+  }
+  async showToast(color: string, msg: string) {
+    await this.toast.create({
+      message: msg,
+      duration: 5000,
+      color: color,
+      keyboardClose: true,
+      cssClass: 'toast_style'
+
+
+    }).then(res => res.present())
+  }
   ionViewWillEnter() {
+    this.total = 0
     this.getItems();
   }
-  validez() {
+
+  async validez() {
+    // const alert = await this.alert.create({
+    //   cssClass: 'my-custom-class',
+    //   header: `Choix d'adresse`,
+    //   message: `Vous pouvez choisir entre suivre votre emplacement (GPS) ou utiliser votre adresse précédemment entrer `,
+    //   buttons: [
+    //     {
+    //       text: 'Mon address',
+    //       handler: (data: any) => {
+    //         console.log('Canceled', data);
+    //       }
+    //     },
+    //     {
+    //       text: 'Truck my location',
+    //       handler: (data: any) => {
+    //         this.loc = true
+    //       }
+    //     }
+    //   ]
+    // });
+    // console.log(this.loc);
+
+    // await alert.present();
+    // const { role } = await alert.onDidDismiss();
+
     // fi lawel nthabtou eli el total akthar men 5laf
     // ba3d nchoufou el user connecte walla 
     // kanah mouch connecte nab3thouh lpage el login 
     // si non 
-    console.log(this.id);
-    if (this.id == "") {
-      this.router.navigate(["/login"])
+    // console.log(this.id);
 
-    }
     if (this.total > 5) {
 
       this.afAuth.authState.subscribe(auth => {
         if (auth) {
-          for (let i = 0; i < this.items.length; i++) {
-            this.db.collection("Produits").add(this.items[i])
-              .then(prod => {
-                this.orders.push(prod.id)
-
-                if (i == this.items.length - 1) {
-                  let lc: LigneCommande = { userID: auth.uid, total: this.total, orders: this.orders, etat: "" }
-                  console.log(lc);
-
-                  this.db.collection("Lignecommande").add(lc)
-                    .then(lcc =>
-                      this.router.navigate(["/panier/validation"], { state: { id: lcc.id } }))
-                    .catch(err => console.log(err.message))
-                }
-
-              })
-
-              .catch(err => console.log(err.message))
-          }
-          console.log(this.orders);
-
-          // this.items.forEach(item => {
-
-          //   this.db.collection("Produits").add(item)
-          //   .then(prod=>{
-          //       this.orders.push(prod.id)
-          //       console.log(this.orders);
-
-          //   })
-
-          //   .catch(err=>console.log(err.message))
-          // });
-
-
-          // let lc:LigneCommande={userID:auth.uid,total:this.total,orders:this.orders}
-          // console.log(lc);
-
-          // this.db.collection("Lignecommande").add(lc)
-          // .then(()=>          this.router.navigate(["/validation"])    )
-          // .catch(err=>console.log(err.message)        )
-
+          this.presentLcationAlert(auth.uid)
         }
         else {
-          this.router.navigate(["/login"])
-
+          this.presentLoginAlert()
         }
-
       })
     } else {
-      console.log("9athitak lazemha tfout 5 laf");
-
+      this.showToast("azra9", "votre commande doit depassé 5 Dinar")
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // if (this.total > 5) {
+
+    //   this.afAuth.authState.subscribe(auth => {
+    //     if (auth) {
+    //       var d: Date = new Date;
+    //       console.log();
+
+    //       for (let i = 0; i < this.items.length; i++) {
+    //         this.db.collection("Produits").add(this.items[i])
+    //           .then(prod => {
+    //             this.orders.push(prod.id)
+
+    //             if (i == this.items.length - 1) {
+    //               let lc: LigneCommande = { date: d.getTime(), userID: auth.uid, total: this.total, orders: this.orders, etat: "" }
+    //               console.log(lc);
+
+    //               this.db.collection("Lignecommande").add(lc)
+    //                 .then(lcc =>
+    //                   this.router.navigate(["/panier/validation"], { state: { id: lcc.id } }))
+    //                 .catch(err => console.log(err.message))
+    //             }
+
+    //           })
+
+    //           .catch(err => console.log(err.message))
+    //       }
+    //     }
+    //     else {
+    //       this.presentLoginAlert()
+    //     }
+    //   })
+    // } else {
+    //   this.showToast("azra9", "votre commande doit depassé 5 Dinar")
+    // }
   }
   ngOnInit() {
   }
@@ -181,7 +329,8 @@ export class PanierPage implements OnInit {
 
     this.is.delete(key)
       .then(rst => {
-this.ionViewWillEnter()    ;
+        this.total = 0;
+        this.ionViewWillEnter();
 
       }
       )

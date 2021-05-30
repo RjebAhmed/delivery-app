@@ -1,36 +1,54 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>admin</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-toolbar color="#ffe368" padding-start="">
+  <ion-title routerLink="/categories" slot="start"
+    ><ion-icon name="caret-back-outline"></ion-icon
+  ></ion-title>
+  <ion-title slot="start" class="center"> Mes commandes </ion-title>
+  <h1 slot="end">0</h1>
+  <ion-icon slot="end" name="cart-outline" routerLink="/compte"></ion-icon>
+</ion-toolbar>
+
 
 <ion-content>
-  <div *ngFor="let order of orders">
-    <div class="cont">
-      <h1>{{order.id}}</h1>
-      <div
-        class="prod"
-        *ngFor="let item of order.items; let i = index"
-        [attr.data-index]="i"
-      >
-        <div class="C1">
-          <div class="L1">
-            <img src="..\assets\burger.png" alt="" />
-            <h2>{{item.nom}}</h2>
-            <p>{{item.autre}}</p>
+  
+  <div class="cont">
+    <div class="commande" *ngFor="let order of orders">
+      <div class="top">
+        <div class="date">{{order.date}}</div>
+        <div class="time">{{order.time}}</div>
+      </div>
+      <div class="contents">
+        <div class="left">
+          <div class="half"></div>
+        </div>
+        <div class="right">
+          <div
+            class="produit"
+            *ngFor="let item of order.items; let i = index"
+            [attr.data-index]="i"
+          >
+            <div class="prod">
+              <span style="display: none" class="price" #selector
+                >{{item.prix}}
+              </span>
+              <div class="title">
+                <img
+                  class="image"
+                  src="..\assets\icons8-sphere-48.png"
+                  alt=""
+                />
+                <span class="text">{{item.nom}}</span>
+              </div>
+              <div class="description">{{item.autre}}</div>
+            </div>
+            <div class="top-left">
+              <div class="qte" #selector2>{{item.quantite}}</div>
+            </div>
           </div>
         </div>
-        <div class="C2">
-          <span> {{item.quantite}}</span>
+      </div>
 
-          <span>{{item.prix}} DT</span>
-        </div>
+      <div class="buttom">
       </div>
-      <div class="total">
-        <span>Total</span>
-        <span>{{order.total}} DT</span>
-      </div>
-    
     </div>
   </div>
 </ion-content>

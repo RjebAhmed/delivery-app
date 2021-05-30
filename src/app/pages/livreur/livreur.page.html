@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>admin</ion-title>
   </ion-toolbar>
@@ -58,5 +58,62 @@
       </div>
     </div>
    
+  </div>
+</ion-content> -->
+<ion-toolbar color="#ffe368" padding-start="">
+  <ion-title routerLink="/categories" slot="start"
+    ><ion-icon name="caret-back-outline"></ion-icon
+  ></ion-title>
+  <ion-title slot="start" class="center"> Mes commandes </ion-title>
+  <h1 slot="end">0</h1>
+  <ion-icon slot="end" name="cart-outline" routerLink="/compte"></ion-icon>
+</ion-toolbar>
+
+<ion-content>
+  <div class="cont">
+    <div class="commande" *ngFor="let order of orders">
+      <div class="top">
+        <div class="date">{{order.date}}</div>
+        <div class="time">{{order.time}}</div>
+      </div>
+      <div class="contents">
+        <div class="left">
+          <div class="half"></div>
+        </div>
+        <div class="right">
+          <div
+            class="produit"
+            *ngFor="let item of order.items; let i = index"
+            [attr.data-index]="i"
+          >
+            <div class="prod">
+              <span style="display: none" class="price" #selector
+                >{{item.prix}}
+              </span>
+              <div class="title">
+                <img
+                  class="image"
+                  src="..\assets\icons8-sphere-48.png"
+                  alt=""
+                />
+                <span class="text">{{item.nom}}</span>
+              </div>
+              <div class="description">{{item.autre}}</div>
+            </div>
+            <div class="top-left">
+              <div class="qte" #selector2>{{item.quantite}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="buttom">
+        <div class="loc" (click)="location(order.userID,order.loc)">
+          <ion-icon name="location-outline"></ion-icon>localisation
+        </div>
+        <div class="price">{{order.total}} DT</div>
+        <div class="done" (click)="livrer(order.id)"><i class="fa fa-check"></i><span style="margin: 0 3px;"></span> livrer </div>
+      </div>
+    </div>
   </div>
 </ion-content>

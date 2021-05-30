@@ -10,10 +10,28 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class AccueilPage implements OnInit {
   avis = []
-
-  constructor(private is: InternalStorageService, private db: AngularFirestore) {
-    this.getAvis()
+  items=[]
+  getItems(){
+    this.items=[]
+    this.is.getkeys() .then(result=>{
+      result.value.forEach(element => {
+        this.items.push(element)        
+        
+      });
+     })
+    .catch(err=>{console.log(err.message);
+    })
+    console.log(this.items);
+      
+    
   }
+  constructor(private is: InternalStorageService, private db: AngularFirestore) {
+    this.getItems()
+        this.getAvis()
+
+  }
+
+  
   doRefresh(event) {
     console.log('Begin async operation');
 
