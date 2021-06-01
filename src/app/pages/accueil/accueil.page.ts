@@ -10,28 +10,43 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class AccueilPage implements OnInit {
   avis = []
-  items=[]
-  getItems(){
-    this.items=[]
-    this.is.getkeys() .then(result=>{
+  items = []
+  slides = [
+    { image: `..\\assets\\acc\\icons8-salami-pizza-96.png`, nom: "Fast food", rl: "/categories/fastfood" },
+    { image: `..\\assets\\acc\\icons8-group-of-fruits-96.png`, nom: "Fruit", rl: "/categories/fruits" },
+    { image: `..\\assets\\acc\\icons8-group-of-vegetables-96.png`, nom: "Legumes", rl: "/categories/vegetables" },
+    { image: `..\\assets\\acc\\icons8-bill-96.png`, nom: "Factures", rl: "/categories/facture" },
+    { image: `..\\assets\\acc\\icons8-pill-100.png`, nom: "Médicament", rl: "/categories/medicament" },
+    { image: `..\\assets\\acc\\icons8-grocery-bag-96.png`, nom: "Produits alimentaires", rl: "/categories/produit-alimentaire" },
+    { image: `..\\assets\\acc\\icons8-cigarettes-pack-100.png`, nom: "Cigarettes", rl: "/categories/cigarette" },
+    { image: `..\\assets\\acc\\icons8-hot-coffee-64.png`, nom: "Café", rl: "/categories/cafe" },
+
+  ]
+
+
+  option = { slidesPerView: 1.5, spaceBetween: 20 }
+  getItems() {
+    this.items = []
+    this.is.getkeys().then(result => {
       result.value.forEach(element => {
-        this.items.push(element)        
-        
+        this.items.push(element)
+
       });
-     })
-    .catch(err=>{console.log(err.message);
     })
+      .catch(err => {
+        console.log(err.message);
+      })
     console.log(this.items);
-      
-    
+
+
   }
   constructor(private is: InternalStorageService, private db: AngularFirestore) {
     this.getItems()
-        this.getAvis()
+    this.getAvis()
 
   }
 
-  
+
   doRefresh(event) {
     console.log('Begin async operation');
 

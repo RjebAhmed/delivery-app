@@ -59,6 +59,7 @@
     </div>
    
   </div>
+  test
 </ion-content> -->
 <ion-toolbar color="#ffe368" padding-start="">
   <ion-title routerLink="/categories" slot="start"
@@ -112,7 +113,9 @@
           <ion-icon name="location-outline"></ion-icon>localisation
         </div>
         <div class="price">{{order.total}} DT</div>
-        <div class="done" (click)="livrer(order.id)"><i class="fa fa-check"></i><span style="margin: 0 3px;"></span> livrer </div>
+        <div class="done" (click)="livrer(order.id)">
+          <i class="fa fa-check"></i><span style="margin: 0 3px"></span> livrer
+        </div>
       </div>
     </div>
   </div>
