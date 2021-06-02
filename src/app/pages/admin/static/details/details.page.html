@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="cont">
+    <div class="item">
+      <div class="top">Nom de livreur</div>
+      <div class="bot">{{liv.nom}}</div>
+    </div>
+    <div class="item">
+      <div class="top">Date d'inscription</div>
+      <div class="bot">{{liv.debut}}</div>
+    </div>
+    <div class="item">
+      <div class="top">Adresse</div>
+      <div class="bot">{{liv.adresse}}</div>
+    </div>
+    <div class="item">
+      <div class="top">Téléphone</div>
+      <div class="bot">{{liv.tel}}</div>
+    </div>
+    <div class="item">
+      <div class="top">Nombre de commande livrée</div>
+      <div class="bot">{{liv.nbc}}</div>
+    </div>
+    <ion-button class="btn" (click)="exclu(liv.id)" color="azra9"
+      >Exclu livreur</ion-button
+    >
+  </div>
+</ion-content>

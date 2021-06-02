@@ -39,6 +39,10 @@ const routes: Routes = [
     path: 'livreur',
     loadChildren: () => import('./pages/livreur/livreur.module').then(m => m.LivreurPageModule)
   },
+  {
+    path: 'liv',
+    loadChildren: () => import('./pages/liv/liv.module').then(m => m.LivPageModule)
+  },
 
 
 

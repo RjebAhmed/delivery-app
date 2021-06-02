@@ -23,6 +23,10 @@ const routes: Routes = [
   {
     path: 'avis',
     loadChildren: () => import('./avis/avis.module').then( m => m.AvisPageModule)
+  },
+  {
+    path: 'static',
+    loadChildren: () => import('./static/static.module').then( m => m.StaticPageModule)
   }
 ];
 

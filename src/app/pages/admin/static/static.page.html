@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>static</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="item" *ngFor="let liv of livreurs" (click)="goDetails(liv)">
+    <div class="image">
+      <ion-avatar slot="end">
+        <img src="..\assets\avatar.png" />
+      </ion-avatar>
+    </div>
+    <div class="nom">{{liv.nom}}</div>
+    <div class="go">
+      <ion-icon name="caret-forward-outline"></ion-icon>
+    </div>
+  </div>
+  <!-- <ion-item *ngFor="let liv of livreurs" (click)="goDetails(liv)">
+    <ion-avatar slot="end">
+      <img src="./avatar.svg" />
+    </ion-avatar>
+    <ion-label>{{liv.nom}}</ion-label>
+  </ion-item> -->
+</ion-content>

@@ -1,0 +1,36 @@
+.cont {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  margin: 10%;
+  width: 80%;
+  height: 550px;
+  border-radius: 23px;
+  padding-top: 20px;
+}
+.item {
+  display: inline-block;
+  margin: 0 10%;
+  border-bottom: 1px solid #11c0a0;
+  width: 80%;
+  margin-top: 15px;
+}
+.top {
+  font-size: 1.1rem;
+  color: #777;
+  font-weight: 600;
+}
+.bot {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.7);
+  padding-bottom: 6px;
+}
+.btn {
+  margin-top: 20px;
+  height: 55px;
+  width: 57%;
+  position: relative;
+  left: 50%;
+  transform: translatex(-50%);
+  color: white;
+}

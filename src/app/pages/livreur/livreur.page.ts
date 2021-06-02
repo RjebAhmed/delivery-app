@@ -3,6 +3,7 @@ import { Item } from './../../model/item';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-livreur',
@@ -14,7 +15,8 @@ export class LivreurPage implements OnInit {
 
   constructor(
     private db: AngularFirestore,
-    private router:Router
+    private router: Router,
+    private auth: AngularFireAuth
   ) {
     this.getOrders()
   }
@@ -23,15 +25,21 @@ export class LivreurPage implements OnInit {
   }
   location(uid, loc) {
     console.log(loc);
-    
-  this.router.navigate(['/livreur/details'], {state:{uid:uid,latitude:loc[0],longitude:loc[1]}})
+
+    this.router.navigate(['/livreur/details'], { state: { uid: uid, latitude: loc[0], longitude: loc[1] } })
 
 
   }
   livrer(id: string) {
-    this.db.collection("Lignecommande").doc(id).update({ etat: "livrée" })
-      .then(done => this.getOrders())
-      .catch(done => console.log("done"))
+    this.auth.authState.subscribe(u => {
+      this.db.collection("Livreurs").doc(u.uid).get().subscribe(liv => {
+        this.db.collection("Livreurs").doc(u.uid).update({ nombreDeCommandesLivrée: liv.data()["nombreDeCommandesLivrée"] + 1 })
+      })
+
+    })
+    // this.db.collection("Lignecommande").doc(id).update({ etat: "livrée" })
+    //   .then(done => this.getOrders())
+    //   .catch(done => console.log("done"))
 
   }
   getOrders() {

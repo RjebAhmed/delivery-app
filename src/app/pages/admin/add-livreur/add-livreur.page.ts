@@ -1,3 +1,4 @@
+import { Livreur } from './../../../model/livreur';
 import { User } from './../../../model/user';
 import { NgForm } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
@@ -33,9 +34,9 @@ export class AddLivreurPage implements OnInit {
     }).then(res => res.present())
   }
   signup(form: NgForm) {
-
+var d:Date=new Date;
     if (this.email != "" && this.tel != "" && this.password != "" && this.adresse != "" && this.nom != "") {
-      var user1: User = form.value
+      var user1:Livreur = {nom:this.nom,email:this.email,password:this.password,adresse:this.adresse,tel:this.tel,début:d.getTime(),nombreDeCommandesLivrée:0}
 
       this.auth.createUserWithEmailAndPassword(user1.email, user1.password)
         .then(user => {
