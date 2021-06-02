@@ -3,6 +3,6 @@ export class Avis {
     stars: number;
     avis: string;
     date: any;
-    etat:string;
-
+    etat: string;
+    image: string;
 }

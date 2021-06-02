@@ -10,7 +10,7 @@ import { Avis } from 'src/app/model/avis';
   styleUrls: ['./avis.page.scss'],
 })
 export class AvisPage implements OnInit {
-  stars: number=3;
+  stars: number = 3;
   avis: string;
   constructor(private db: AngularFirestore,
     private auth: AngularFireAuth,
@@ -19,9 +19,9 @@ export class AvisPage implements OnInit {
 
   ngOnInit() {
   }
-  updateStar(s:number){
-this.stars=s;
-console.log(this.stars);
+  updateStar(s: number) {
+    this.stars = s;
+    console.log(this.stars);
 
   }
   addAvis() {
@@ -29,7 +29,7 @@ console.log(this.stars);
     this.auth.user.subscribe(u => {
       this.db.collection('Users').doc(u.uid).get().subscribe(user => {
         var d = new Date().getTime()
-        var currentAvis: Avis = { nom: user.data()["nom"], avis: this.avis, stars: this.stars, date: d, etat: "waiting" }
+        var currentAvis: Avis = { nom: user.data()["nom"], avis: this.avis, stars: this.stars, date: d, etat: "waiting", image: user.data()["image"] }
         this.db.collection("Avis").add(currentAvis)
           .then(done => console.log("done"))
           .catch(err => console.log(err.message))

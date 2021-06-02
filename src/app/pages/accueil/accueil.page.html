@@ -33,7 +33,7 @@
     ></path>
   </svg>
   <div class="cont">
-    <ion-avatar>
+    <ion-avatar class="av">
       <img src="/..\assets\avatar.png" />
     </ion-avatar>
     <ion-icon routerLink="/panier" class="cart" name="cart-outline"></ion-icon>
@@ -70,7 +70,81 @@
     <div class="pop">
       <div class="titp">Populaire</div>
       <div class="popular">
-        
+        <div class="left">
+          <div class="top">
+            <div class="dot">
+              <ion-icon name="caret-forward-outline"></ion-icon>
+            </div>
+            <span> Top of the week</span>
+          </div>
+          <div class="mid">
+            <div class="t">Andiamo Pizza</div>
+            <div class="st">Restaurant Andiamo</div>
+          </div>
+          <div class="bot">
+            <div class="b"><ion-icon name="add"></ion-icon></div>
+            <div class="b1">
+              <div><ion-icon name="star"></ion-icon> 5.0</div>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <img src="..\assets\pngegg.png" alt="" />
+        </div>
+      </div>
+      <div class="popular">
+        <div class="left">
+          <div class="top">
+            <div class="dot">
+              <ion-icon name="caret-forward-outline"></ion-icon>
+            </div>
+            <span> Top of the week</span>
+          </div>
+          <div class="mid">
+            <div class="t">Fruits frais</div>
+            <div class="st">Primeur chentech</div>
+          </div>
+          <div class="bot">
+            <div class="b"><ion-icon name="add"></ion-icon></div>
+            <div class="b1">
+              <div><ion-icon name="star"></ion-icon> 5.0</div>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <img src="..\assets\PngItem_5167317.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="review">
+      <!-- <div *ngFor="let av of avis">
+        <h1>{{av.date}}</h1>
+        <h1>{{av.nom}}</h1>
+        <h1>{{av.stars}}</h1>
+        <h1>{{av.avie}}</h1>
+      </div> -->
+      <div class="titr">Avis</div>
+
+      <div class="rev" *ngFor="let av of avis">
+        <div class="topr">
+          <div class="avf">
+            <ion-avatar *ngIf="!av.image">
+              <img src="/..\assets\avatar.png" />
+            </ion-avatar>
+            <ion-avatar *ngIf="av.image">
+              <img [src]=" av.image | async"/>
+            </ion-avatar>
+          </div>
+          <span>{{av.nom}} </span>
+          <div class="stars">
+            <ion-icon
+              [ngClass]="{'yel': x < av.s+1}"
+              *ngFor="let x of [1,2,3,4,5]"
+              name="star"
+            ></ion-icon>
+          </div>
+        </div>
+        <div class="content">{{av.avie}}</div>
       </div>
     </div>
   </div>

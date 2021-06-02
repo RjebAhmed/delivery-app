@@ -146,7 +146,7 @@
 
 // }
 .image {
-  position: fixed;
+  position: absolute;
   top: -40%;
   left: -60%;
   width: 750px !important;
@@ -155,7 +155,7 @@
 .cont {
   margin: 0 8%;
 }
-ion-avatar {
+.av {
   width: 55px;
   height: 55px;
   position: absolute;
@@ -277,8 +277,138 @@ ion-slide {
   margin-bottom: 20px;
 }
 .popular {
+  width: 84%;
+  height: 190px;
+  border-radius: 23px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  display: flex;
+  margin-bottom: 20px;
+}
+.left {
+  width: 60%;
+  height: 100%;
+  overflow: hidden;
+}
+.right {
+  height: 100%;
+  width: 40%;
+  margin-bottom: 10px;
+}
+.right img {
+  width: 130px;
+  height: 130px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 22%;
+}
+.top {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  padding-left: 20px;
+}
+.bot {
   width: 80%;
-  height: 150px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  height: 25%;
+  display: flex;
+}
+.mid {
+  padding-left: 20px;
 
+  width: 100%;
+  height: 40%;
+  display: block;
+  margin: 5px 0;
+}
+.top ion-icon {
+  font-size: 1.5rem;
+  color: #ffe368;
+  margin-top: 5px;
+}
+.t {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.st {
+  color: rgb(165, 165, 165);
+}
+.b {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #11c0a0;
+  font-size: 2rem;
+  color: white;
+
+  border-bottom-left-radius: 23px;
+  border-top-right-radius: 23px;
+}
+.b1 {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.review {
+  position: absolute;
+  top: 155%;
+  width: 100%;
+}
+.titr {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.rev {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  width: 84%;
+  border-radius: 23px;
+  margin-bottom: 20px;
+}
+.topr {
+  display: flex;
+  width: 100%;
+  height: 70px;
+  margin: 0 5%;
+}
+.topr ion-avatar {
+  width: 40px;
+  height: 40px;
+}
+.topr .avf {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.topr span {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+}
+.topr .stars {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  font-size: 1.2rem;
+  color: #d5d6d8;
+}
+.content {
+  margin: 0 10%;
+  border-top: solid 1px lightgray;
+  padding: 20px 0;
+}
+.yel{
+  color: #ffe368 !important;
 }

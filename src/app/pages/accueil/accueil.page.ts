@@ -1,3 +1,4 @@
+import { AngularFireStorage } from '@angular/fire/storage';
 import { Item } from './../../model/item';
 import { InternalStorageService } from './../../services/internal-storage.service';
 import { Component, OnInit } from '@angular/core';
@@ -40,9 +41,19 @@ export class AccueilPage implements OnInit {
 
 
   }
-  constructor(private is: InternalStorageService, private db: AngularFirestore) {
-    this.getItems()
+  test() {
+    console.log(this.avis);
+
+  }
+  constructor(private is: InternalStorageService,
+     private db: AngularFirestore,
+    private storage: AngularFireStorage
+     
+     ) {
     this.getAvis()
+
+    this.getItems()
+    this.ionViewWillEnter()
 
   }
 
@@ -55,28 +66,28 @@ export class AccueilPage implements OnInit {
       event.target.complete();
     }, 2000);
   }
+  ionViewWillEnter() {
+    console.log("aaaaaaaaaaaa");
+
+    console.log(this.avis);
+
+  }
+
   getAvis() {
     console.log("eeeeee");
 
     this.db.collection("Avis", ref => ref.where("etat", "!=", "waiting")).snapshotChanges().subscribe(data => {
+      console.log();
 
       this.avis = data.map(e => {
-        var day = new Date(e.payload.doc.data()["date"]).getDate().toString();
-        var mon = (new Date(e.payload.doc.data()["date"]).getMonth() + 1).toString();
-        var year = new Date(e.payload.doc.data()["date"]).getFullYear().toString();
-
-
-
-
-        var d = day + "/" + mon + "/" + year + "  "
+        console.log(e.payload.doc.data()["stars"]);
         return {
           nom: e.payload.doc.data()["nom"],
-          satrs: e.payload.doc.data()["stars"],
-          date: d,
+          s: e.payload.doc.data()["stars"],
           avie: e.payload.doc.data()["avis"],
+          image : this.storage.ref(e.payload.doc.data()["image"]).getDownloadURL(),
+
           id: e.payload.doc.id
-
-
         }
       })
     })
