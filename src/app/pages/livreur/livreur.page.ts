@@ -4,6 +4,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { interval, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-livreur',
@@ -12,13 +13,49 @@ import { AngularFireAuth } from '@angular/fire/auth';
 })
 export class LivreurPage implements OnInit {
   orders = []
-
+  mySubscription: Subscription
+  orderTime = []
   constructor(
     private db: AngularFirestore,
     private router: Router,
     private auth: AngularFireAuth
   ) {
     this.getOrders()
+    this.mySubscription = interval(1000).subscribe((x => {
+      this.getOrderTime()
+
+    }));
+
+  }
+  test() {
+    console.log(this.orderTime);
+
+  }
+  getOrderTime() {
+    this.orderTime = []
+    this.db.collection("Lignecommande", ref =>
+      ref.where('etat', "==", "accepter")).snapshotChanges().subscribe(data => {
+        data.map(e => {
+
+          var dat: Date = new Date;
+          if ((1800000 - (dat.getTime() - e.payload.doc.data()["date"])) > 0) {
+            var d = this.transform(1800000 - (dat.getTime() - e.payload.doc.data()["date"]))
+            this.orderTime.push(d);
+
+
+          }
+          else {
+            this.orderTime.push("ra7 lghali");
+            console.log("eeeeeeeeee");
+
+          }
+
+        })
+      })
+  }
+  ionViewWillEnter() {
+    this.getOrders()
+
   }
 
   ngOnInit() {
@@ -37,9 +74,9 @@ export class LivreurPage implements OnInit {
       })
 
     })
-    // this.db.collection("Lignecommande").doc(id).update({ etat: "livrée" })
-    //   .then(done => this.getOrders())
-    //   .catch(done => console.log("done"))
+    this.db.collection("Lignecommande").doc(id).update({ etat: "livrée" })
+      .then(done => this.getOrders())
+      .catch(done => console.log("done"))
 
   }
   getOrders() {
@@ -73,16 +110,9 @@ export class LivreurPage implements OnInit {
               })
               .catch(err => console.log(err.message))
           });
-          var day = new Date(e.payload.doc.data()["date"]).toString().split(' ')[0];
-          var mon = (new Date(e.payload.doc.data()["date"]).getMonth() + 1).toString();
-          var year = new Date(e.payload.doc.data()["date"]).getFullYear().toString();
-          var hours = new Date(e.payload.doc.data()["date"]).getHours().toString();
+          var dat: Date = new Date;
 
-          var minuts = (new Date(e.payload.doc.data()["date"]).getMinutes() < 10 ? '0' : '') + new Date(e.payload.doc.data()["date"]).getMinutes()
-
-
-          var d = day + " " + mon + " " + year
-          var t = hours + ":" + minuts;
+          var d = this.transform(dat.getTime() - e.payload.doc.data()["date"])
           return {
             items: items,
             userID: e.payload.doc.data()["userID"],
@@ -91,11 +121,28 @@ export class LivreurPage implements OnInit {
             id: e.payload.doc.id,
             users: users,
             date: d,
-            time: t,
             loc: e.payload.doc.data()["loc"],
           }
         })
       })
 
+  }
+  transform(milliseconds) {
+    //Get hours from milliseconds
+    var hours = milliseconds / (1000 * 60 * 60);
+    var absoluteHours = Math.floor(hours);
+
+    //Get remainder from hours and convert to minutes
+    var minutes = (hours - absoluteHours) * 60;
+    var absoluteMinutes = Math.floor(minutes);
+    var m = absoluteMinutes > 9 ? absoluteMinutes : '0' + absoluteMinutes;
+
+    //Get remainder from minutes and convert to seconds
+    var seconds = (minutes - absoluteMinutes) * 60;
+    var absoluteSeconds = Math.floor(seconds);
+    var s = absoluteSeconds > 9 ? absoluteSeconds : '0' + absoluteSeconds;
+
+
+    return + m + ':' + s;
   }
 }

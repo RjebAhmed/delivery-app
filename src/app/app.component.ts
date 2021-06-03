@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { interval, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  mySubscription: Subscription
+
+  constructor() {
+    // this.mySubscription = interval(1000).subscribe((x => {
+
+    // }));
+  }
 }
