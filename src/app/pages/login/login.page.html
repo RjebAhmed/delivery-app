@@ -1,4 +1,4 @@
-<body>
+<!-- <body>
   <div class="half">
     <h2>Login</h2>
   </div>
@@ -24,7 +24,7 @@
         [(ngModel)]="password"
       ></ion-input>
     </ion-item>
-    <ion-button type="submit" color="azra9" expand="block" >Login</ion-button>
+    <ion-button type="submit" color="azra9" expand="block" >S'identifier</ion-button>
   </form>
   <h1 routerLink="/forgot-password">Forgot assword</h1>
   <ion-icon
@@ -33,4 +33,121 @@
     class="exit"
     name="close-circle-outline"
   ></ion-icon>
-</body>
+</body> -->
+
+<svg
+  class="svg1"
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  preserveAspectRatio="xMidYMid meet"
+  viewBox="0 0 640 640"
+  width="640"
+  height="940"
+>
+  <defs>
+    <path
+      d="M477.47 107.13C477.47 89.93 458.01 79.94 444.03 89.97C444.03 89.97 427.36 91.56 423.2 91.96C397.66 94.4 374.62 108.29 360.52 129.72C355.51 137.35 364.98 122.94 360.52 129.72C344.49 154.1 339 183.93 345.29 212.42C347.09 220.57 343.52 204.4 345.53 213.53C351.16 239.04 366.07 261.53 387.36 276.65C399.53 285.29 406.05 290.39 406.94 291.97C406.94 291.97 418.71 318.33 428.97 334.44C436.88 346.86 428.15 371.91 432.42 384.96C443.14 417.69 468.29 435.69 468.29 435.69C476.71 447.45 476.71 447.45 468.29 435.69C472.18 441.12 480.75 438.31 480.67 431.63C480.24 394.53 479.18 301.76 477.47 153.33C477.47 128.69 477.47 113.29 477.47 107.13Z"
+      id="aKx0xKwvD"
+    ></path>
+  </defs>
+  <g>
+    <g>
+      <g>
+        <use
+          xlink:href="#aKx0xKwvD"
+          opacity="1"
+          fill="#ffe368"
+          fill-opacity="1"
+        ></use>
+      </g>
+    </g>
+  </g>
+</svg>
+<svg
+  version="1.1"
+  class="svg2"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  preserveAspectRatio="xMidYMid meet"
+  viewBox="0 0 640 640"
+  width="640"
+  height="640"
+>
+  <defs>
+    <path
+      d="M228.05 145.37C232.22 148.86 234.83 151.04 235.87 151.92C235.87 151.92 264.41 175.98 264.41 175.98C273.46 183.68 265.61 177.01 269.47 180.29C293.54 200.76 302.06 234.2 290.72 263.69C287.61 271.77 288.64 269.11 283.38 282.77C278.3 296 280.59 310.93 289.42 322.02C299.9 335.2 293.34 326.95 297.88 332.66C318.37 358.41 305.2 396.73 273.2 404.43C256.3 408.5 214.05 418.67 146.44 434.94L141.84 145.37C152.84 135.52 159.72 129.36 162.47 126.9C181.36 109.99 211.06 114.95 223.42 137.08C224.04 138.19 225.58 140.95 228.05 145.37Z"
+      id="e9wp7KAqq"
+    ></path>
+  </defs>
+  <g>
+    <g>
+      <g>
+        <use
+          xlink:href="#e9wp7KAqq"
+          opacity="1"
+          fill="#11c0a0"
+          fill-opacity="1"
+        ></use>
+      </g>
+    </g>
+  </g>
+</svg>
+<svg
+  class="svg3"
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  preserveAspectRatio="xMidYMid meet"
+  viewBox="0 0 640 640"
+  width="640"
+  height="640"
+>
+  <defs>
+    <path
+      d="M401.58 410.62C401.54 410.81 401.48 411.01 401.4 411.19C401.48 411 401.48 411 401.4 411.19C398.05 418.81 394.15 426.14 389.76 433.13C376.23 454.67 357.99 473 336.28 486.67C313.17 501.23 310.06 503.18 326.96 492.54C319.62 497.16 322.9 508.51 331.57 508.51C348.72 508.51 391.61 508.51 460.23 508.51C460.23 428.59 460.23 378.64 460.23 358.67C460.23 351.41 452.65 346.64 446.11 349.8C438.77 353.33 449.1 348.35 446.31 349.7C423.13 360.87 406.69 382.47 402.09 407.79C401.98 408.41 403.14 401.99 401.58 410.62Z"
+      id="hrBHbWXWo"
+    ></path>
+  </defs>
+  <g>
+    <g>
+      <g>
+        <use
+          xlink:href="#hrBHbWXWo"
+          opacity="1"
+          fill="#11c0a0"
+          fill-opacity="1"
+        ></use>
+      </g>
+    </g>
+  </g>
+</svg>
+<h1 class="title">S'identifier maintenant</h1>
+<form autocomplete="off" #form="ngForm" (submit)="login(form)">
+  <div class="form-floating mb-3">
+    <input
+      [(ngModel)]="email"
+      name="email"
+      autocomplete="off"
+      type="text"
+      class="form-control"
+      id="floatingInput"
+      placeholder="name@example.com"
+    />
+    <label for="floatingInput">Email</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      name="password"
+      type="password"
+      [(ngModel)]="password"
+      autocomplete="off"
+      class="form-control"
+      id="floatingInput"
+      placeholder="name@example.com"
+    />
+    <label for="floatingInput" routerLink="/forgot-password">Mot de pass</label>
+  </div>
+  <span class="O">Mot de passe <span class="O1"> oublié</span> </span>
+  <button class="btn" type="submit" >S'identifier</button>
+</form>

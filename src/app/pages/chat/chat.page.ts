@@ -71,7 +71,7 @@ export class ChatPage implements OnInit {
   getConv() {
 
 
-    this.db.collection("Chat", ref => ref.where("userID", "==", this.id).orderBy("date"))
+    this.db.collection("Chat", ref => ref.where("userID", "in", this.id).orderBy("date"))
 
       .snapshotChanges().subscribe(data => {
         this.conv = data.map(e => {

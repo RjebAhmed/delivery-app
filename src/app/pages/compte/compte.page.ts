@@ -17,23 +17,25 @@ export class ComptePage implements OnInit {
   id: string;
   image: any = null
   @ViewChild('selector') file: any;
-  items=[]
-  getItems(){
-    this.items=[]
-    this.is.getkeys() .then(result=>{
+  items = []
+  getItems() {
+    this.items = []
+    this.is.getkeys().then(result => {
       result.value.forEach(element => {
-        this.items.push(element)        
-        
+        this.items.push(element)
+
       });
-     })
-    .catch(err=>{console.log(err.message);
     })
+      .catch(err => {
+        console.log(err.message);
+      })
     console.log(this.items);
-      
-    
+
+
   }
   constructor(
-    private is:InternalStorageService,
+
+    private is: InternalStorageService,
     private auth: AngularFireAuth,
     private db: AngularFirestore,
     private toast: ToastController,
@@ -43,10 +45,11 @@ export class ComptePage implements OnInit {
 
 
   ) {
+
     this.getImage()
     this.getNom()
   }
-  getNom(){
+  getNom() {
     this.auth.authState.subscribe(u => {
       if (u) {
         this.user = u
@@ -54,9 +57,9 @@ export class ComptePage implements OnInit {
         this.db.collection("Users").doc(u.uid).get().subscribe(e => {
           this.nom = e.data()["nom"]
         })
-  
+
       }
-   
+
     })
   }
   onselectFile(e) {
@@ -82,14 +85,14 @@ export class ComptePage implements OnInit {
       if (u) {
         this.db.collection("Users").doc(u.uid).get().subscribe(data => {
           if (data.data()["image"]) {
-                      this.image = this.storage.ref(data.data()["image"]).getDownloadURL()
+            this.image = this.storage.ref(data.data()["image"]).getDownloadURL()
 
           }
-          
-  
-        }) 
+
+
+        })
       }
-    
+
     })
 
   }
@@ -133,7 +136,7 @@ export class ComptePage implements OnInit {
   logout() {
     this.auth.signOut()
       .then(done => {
-      
+
         this.showToast("success", "vous deconnectée avec succeé")
         location.reload()
 
