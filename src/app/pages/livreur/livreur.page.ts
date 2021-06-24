@@ -45,8 +45,7 @@ export class LivreurPage implements OnInit {
 
           }
           else {
-            this.orderTime.push("ra7 lghali");
-            console.log("eeeeeeeeee");
+            this.orderTime.push("expiré");
 
           }
 
@@ -60,10 +59,9 @@ export class LivreurPage implements OnInit {
 
   ngOnInit() {
   }
-  location(uid, loc) {
-    console.log(loc);
+  location(id) {
 
-    this.router.navigate(['/livreur/details'], { state: { uid: uid, latitude: loc[0], longitude: loc[1] } })
+    this.router.navigate(['/livreur/details'], { state: { id: id } })
 
 
   }
@@ -83,12 +81,11 @@ export class LivreurPage implements OnInit {
     this.db.collection("Lignecommande", ref =>
       ref.where('etat', "==", "accepter")).snapshotChanges().subscribe(data => {
         this.orders = data.map(e => {
-          var users = []
+          var us: User;
           var items = []
           this.db.collection("Users").doc(e.payload.doc.data()["userID"]).ref.get()
             .then(u => {
               var us: User = { nom: u.data()["nom"], adresse: u.data()["adresse"], tel: u.data()["tel"], email: u.data()["email"], password: u.data()["password"] }
-              users.push(us)
             })
             .catch(err => console.log(err.message))
 
@@ -119,7 +116,7 @@ export class LivreurPage implements OnInit {
             etat: e.payload.doc.data()["etat"],
             total: e.payload.doc.data()["total"],
             id: e.payload.doc.id,
-            users: users,
+            users: us,
             date: d,
             loc: e.payload.doc.data()["loc"],
           }

@@ -5,6 +5,16 @@
 </ion-header>
 <ion-content>
   <div class="cont">
+    <div *ngIf="orders.length==0" class="empty">
+      <div class="text">
+        Vous n'avez pas aucune commande
+      </div>
+      <img src="..\assets\icons8-empty-box-64.png" alt="">
+      <button routerLink="/categories" class="btn">Commandez maintenant</button>
+
+    </div>
+    <div *ngIf="orders.length!=0">
+
     <div class="commande" *ngFor="let order of orders">
       <div class="top">
         <div class="date">{{order.date}}</div>
@@ -63,5 +73,6 @@
         </ion-button>
       </div>
     </div>
+  </div>
   </div>
 </ion-content>

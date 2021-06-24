@@ -1,12 +1,5 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>avis</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  hello world!!
-  <div *ngFor="let av of avis">
+  <!-- <div *ngFor="let av of avis">
     <h1>{{av.date}}</h1>
     <h1>{{av.nom}}</h1>
     <h1>{{av.stars}}</h1>
@@ -14,5 +7,27 @@
     <ion-button color="success" (click)="accepter(av.id)">accepter</ion-button>
     <ion-button color="danger" (click)="refuser(av.id)">refuser</ion-button>
 
+  </div> -->
+  <ion-icon routerLink="/admin" name="arrow-back-circle-outline"></ion-icon>
+  <div class="cont">
+    <div *ngIf="avis.length==0" class="empty">
+      <div class="text">Aucune avis a traiter</div>
+      <img src="..\assets\icons8-note-64.png" alt="" />
+
+      <div *ngIf="avis.length!=0"></div>
+      <div class="item" *ngFor="let av of avis">
+        <div class="date">{{av.date}}</div>
+        <div class="nom">{{av.nom}}</div>
+        <div class="avis">{{av.avie}}</div>
+        <button class="btn" (click)="accepter(av.id)">accepter</button>
+        <button
+          class="btn"
+          (click)="refuser(av.id)"
+          style="background-color: #ffe368"
+        >
+          refuser
+        </button>
+      </div>
+    </div>
   </div>
 </ion-content>

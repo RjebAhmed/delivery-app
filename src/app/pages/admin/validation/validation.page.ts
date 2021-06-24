@@ -29,7 +29,7 @@ export class ValidationPage implements OnInit {
     this.db.collection("Lignecommande").doc(id).update({ etat: "refuser" })
       .then(done => {
 
-        this.router.navigate(["/chat"], { state: { id: id } })
+        this.router.navigate(["/chat"], { state: { id: userID } })
 
       }
       )

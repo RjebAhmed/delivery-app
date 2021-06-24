@@ -1,4 +1,4 @@
-
+<!-- 
 
 <ion-toolbar color="#11c0a0" padding-start="">
   <ion-title routerLink="/categories" slot="start"
@@ -64,21 +64,11 @@
         />
         <label for="floatingPassword">Autre recommendation ?</label>
       </div>
-      <!-- <div class="camera">
-        <img src="..\assets\camera.png" alt="" />
-        <h1>ajouter une photo du produit</h1>
-      </div> -->
+
       <button (click)="setItem()" class="panierButton">
         Ajouter au panier
       </button>
-      <!-- <ion-button
-        class="panierButton"
-        (click)="setItem()"
-        color="azra9"
-        expand="full"
-      > -->
-        <!-- Ajouter au panier
-      </ion-button> -->
+
     </form>
    <img class="bg1" src="..\assets\fastfood\burgerbg.png" alt="">
    <img class="bg2" src="..\assets\fastfood\pizza.png" alt="">
@@ -89,6 +79,79 @@
 
 
 
+
+  </div>
+</ion-content> -->
+<ion-content>
+  <div class="cont">
+    <ion-icon routerLink="/panier" class="cart" name="cart-outline"></ion-icon>
+    <ion-badge class="badge" color="asfar">{{items.length}}</ion-badge>
+    <div class="title">Facture</div>
+    <form action="">
+      <ion-item>
+        <ion-input
+          placeholder="Qu'est-ce tu veux manger"
+          [(ngModel)]="nom"
+          name="nom"
+          type="text"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          placeholder="Quantite"
+          [(ngModel)]="quantite"
+          name="Quantite"
+          type="number"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          placeholder="Prix ​​approximatif (DT)"
+          [(ngModel)]="prix"
+          name="prix"
+          type="number"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-textarea
+          placeholder="Détails"
+          [(ngModel)]="autre"
+          name="autre"
+        ></ion-textarea>
+      </ion-item>
+      <button (click)="setItem()" class="panierButton">Ajouter</button>
+    </form>
+
+    <svg
+      class="im1"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 640 640"
+      width="940"
+      height="1240"
+    >
+      <defs>
+        <path
+          d="M270.9 59.47C288.51 59.47 299.53 59.47 303.93 59.47C334.18 59.47 363.09 71.99 383.79 94.04C391.21 101.94 396.63 107.72 407.96 119.78C416.42 128.8 426.98 135.58 438.7 139.53C458.26 146.12 442.61 140.85 448.04 142.68C497.43 159.32 524.8 212.04 510 262C507.63 269.99 501.72 289.94 492.25 321.87C479.46 364.48 471.47 391.11 468.27 401.76C457.25 438.46 430.85 468.57 395.9 484.29C370.9 495.54 321.82 517.62 289.55 532.14C280.69 536.12 270.64 529.79 270.41 520.08C268.95 458.66 265.3 305.13 259.47 59.47L270.9 59.47Z"
+          id="aT4nenna5"
+        ></path>
+      </defs>
+      <g>
+        <g>
+          <g>
+            <use
+              xlink:href="#aT4nenna5"
+              opacity="1"
+              fill="#faf9fc"
+              fill-opacity="1"
+            ></use>
+          </g>
+        </g>
+      </g>
+    </svg>
 
   </div>
 </ion-content>

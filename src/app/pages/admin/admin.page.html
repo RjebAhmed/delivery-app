@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-button (click)="test()" color="secondary" expand="block"
+  <!-- <ion-button (click)="test()" color="secondary" expand="block"
     >chat</ion-button
   >
   <ion-button routerLink="validation" color="success" expand="block"
@@ -14,5 +14,31 @@
   <ion-button routerLink="add-livreur" color="success" expand="block"
     >validatin</ion-button
   >
-  <ion-button routerLink="/admin/static" color="warning" expand="block">livreurs statics</ion-button>
+  <ion-button routerLink="/admin/static" color="warning" expand="block">livreurs statics</ion-button> -->
+  <ion-content>
+    <div class="content">
+      <div class="item" routerLink="validation">
+        <img src="..\assets\admin\icons8-data-quality-100.png" alt="" />
+        <h1>Validation</h1>
+      </div>
+      
+      <div class="item" (click)="test()">
+        <img src="..\assets\admin\icons8-chat-100.png" alt="" />
+        <h1>Chat</h1>
+      </div>
+      <div class="item" routerLink="add-livreur">
+        <img src="..\assets\admin\icons8-add-administrator-80.png" alt="" />
+        <h1>Ajouter livreur</h1>
+      </div>
+      <div class="item" routerLink="/admin/static">
+        <img src="..\assets\admin\icons8-statistics-64.png" alt=""  />
+        <h1>statistiques</h1>
+      </div>
+      <div class="item" routerLink="/admin/avis">
+        <img src="..\assets\admin\icons8-list-64.png" alt=""  />
+        <h1>Les avis</h1>
+      </div>
+      
+    </div>
+  </ion-content>
 </ion-content>

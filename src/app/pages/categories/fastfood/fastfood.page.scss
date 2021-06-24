@@ -1,158 +1,223 @@
-ion-icon {
-  font-size: 40px;
-  padding-right: 2%;
-}
+// ion-icon {
+//   font-size: 40px;
+//   padding-right: 2%;
+// }
 
-ion-toolbar h1 {
-  background-color: white;
-  width: 20px;
-  height: 20px;
-  font-size: 12px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+// ion-toolbar h1 {
+//   background-color: white;
+//   width: 20px;
+//   height: 20px;
+//   font-size: 12px;
+//   border-radius: 50%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   position: absolute;
+//   right: 1%;
+//   top: -30%;
+//   z-index: 99999999;
+//   color: #11c0a0;
+// }
+// ion-toolbar {
+//   padding-right: 4%;
+// }
+// ion-conten {
+//   border: none;
+//   box-shadow: none;
+// }
+// .bg {
+//   background: linear-gradient(#11c0a0, white);
+// }
+// .form-floating {
+//   box-shadow: 0 0 7pt 3pt rgba(255,227,104,1);
+//   width: 80%;
+//   display: flex;
+//   justify-content: center;
+//   color: rgb(174, 172, 191);
+//   font-size: 18px;
+//   margin-bottom: 25px !important;
+//   border-radius: 50px;
+
+// }
+// form {
+//   position: relative;
+//   left: 10%;
+//   top: 60px;
+// }
+// .title h1 {
+//   text-align: center;
+//   margin-top: 10%;
+//   font-size: 1.8rem;
+//   font-weight: 700;
+// }
+// .title{
+//   margin-top: 60px;
+// }
+// input {
+//   color: gray !important;
+//   height: 60px !important;
+//   font-size: 18px !important;
+//   font-weight: 700;
+//   border-radius: 50px;
+//   padding-left: 9% !important;
+
+// }
+// input:focus{
+//   outline: none;
+//   box-shadow: 0 0 7pt 3pt rgba(255,227,104,1);
+
+// }
+// .camera {
+//   width: 100px;
+//   height: 100px;
+//   box-shadow: 0 0 7pt 0.5pt #11c0a0;
+//   border-radius: 50%;
+//   position: absolute;
+//   bottom: -40%;
+// }
+// .camera img {
+//   position: relative;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   width: 70px;
+// }
+// .camera h1 {
+//   position: relative;
+//   top: -70%;
+//   left: 115%;
+//   width: 220px;
+//   text-align: center;
+//   color: rgb(174, 172, 191);
+// }
+
+
+// label{
+//   padding-left: 9%;
+
+// }
+// .bg1 {
+//   width: 110px;
+//   height: 110px;
+//   position: absolute;
+//   z-index: -1;
+//   top: 11%;
+//   left: -3%;
+// }
+// .bg2 {
+//   width: 110px;
+//   height: 110px;
+//   position: absolute;
+//   z-index: -1;
+//   top: 2%;
+//   left: 75%;
+// }
+// .bg3 {
+//   width: 90px;
+//   height: 90px;
+//   position: absolute;
+//   z-index: -1;
+//   top: 42%;
+//   left: 79%;
+// }
+// .bg4 {
+//   width: 80px;
+//   height: 80px;
+//   position: absolute;
+//   z-index: -1;
+//   top: 65%;
+//   left: 0%;
+// }
+// .bg5 {
+//   width: 100px;
+//   height: 100px;
+//   position: absolute;
+//   z-index: -1;
+//   top: 85%;
+//   left: 7%;
+// }
+// .bg6 {
+//   width: 90px;
+//   height: 90px;
+//   position: absolute;
+//   z-index: -1;
+//   top: 82%;
+//   left: 79%;
+// }
+//------------------------------------------------------------
+.cont {
+  margin-left: 4%;
+}
+.cart {
+  font-size: 2.5rem;
   position: absolute;
-  right: 1%;
-  top: -30%;
-  z-index: 99999999;
-  color: #11c0a0;
+  top: 2%;
+  left: 85%;
+  font-weight: 200;
+  color: rgb(153, 151, 151);
 }
-ion-toolbar {
-  padding-right: 4%;
+.badge {
+  font-size: 0.7rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 1%;
+  left: 90%;
 }
-ion-conten {
-  border: none;
-  box-shadow: none;
-}
-.bg {
-  background: linear-gradient(#11c0a0, white);
-}
-.form-floating {
-  box-shadow: 0 0 7pt 3pt rgba(255,227,104,1);
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  color: rgb(174, 172, 191);
-  font-size: 18px;
-  margin-bottom: 25px !important;
-  border-radius: 50px;
+.title {
+  position: absolute;
 
+  top: 4%;
+
+  font-size: 3.4rem;
+  font-weight: 500;
 }
 form {
-  position: relative;
-  left: 10%;
-  top: 60px;
+  position: absolute;
+  top: 52%;
 }
-.title h1 {
-  text-align: center;
-  margin-top: 10%;
-  font-size: 1.8rem;
-  font-weight: 700;
+
+ion-input + ion-textarea {
+  background-color: transparent;
+font-size: 1.35rem;
 }
-.title{
-  margin-top: 60px;
-}
-input {
-  color: gray !important;
-  height: 60px !important;
-  font-size: 18px !important;
-  font-weight: 700;
-  border-radius: 50px;
-  padding-left: 9% !important;
+ion-item{
+  margin-top: 12px;
+  --border-color: #ffe368;
 
 }
-input:focus{
-  outline: none;
-  box-shadow: 0 0 7pt 3pt rgba(255,227,104,1);
-  
-}
-.camera {
-  width: 100px;
-  height: 100px;
-  box-shadow: 0 0 7pt 0.5pt #11c0a0;
-  border-radius: 50%;
+.im1 {
   position: absolute;
-  bottom: -40%;
+  top: 10%;
+  left: -100%;
+  z-index: -1;
 }
-.camera img {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70px;
+
+* {
+  --ion-item-background: rgba(255, 0, 0, 0);
+  $text-input-highlight-color-valid:#fff;
+$text-input-highlight-color-invalid:#fff;
 }
-.camera h1 {
-  position: relative;
-  top: -70%;
-  left: 115%;
-  width: 220px;
-  text-align: center;
-  color: rgb(174, 172, 191);
+.im2 {
+  position: absolute;
+  top: 14%;
+  left: 40%;
+  width: 300px;
+  height: 300px;
 }
 .panierButton {
-  width: 80%;
+  width: 100%;
   height: 65px;
-  background-color: #11c0a0;
-  font-size: 1.5rem;
-  color: white;
-  border-radius: 40px !important;
-  position: absolute;
-  top: 110%;
+  color: #777 !important;
+  // background-color: #ffe368;
+  background-color: transparent;
+  border: 2px solid #ffe368;
+  font-size: 1.4rem;
+  border-radius: 5px;
+
   // left: 0%;
   padding: 2%;
+  margin-top: 9px;
 }
-
-
-label{
-  padding-left: 9%;
-
-}
-.bg1 {
-  width: 110px;
-  height: 110px;
-  position: absolute;
-  z-index: -1;
-  top: 11%;
-  left: -3%;
-}
-.bg2 {
-  width: 110px;
-  height: 110px;
-  position: absolute;
-  z-index: -1;
-  top: 2%;
-  left: 75%;
-}
-.bg3 {
-  width: 90px;
-  height: 90px;
-  position: absolute;
-  z-index: -1;
-  top: 42%;
-  left: 79%;
-}
-.bg4 {
-  width: 80px;
-  height: 80px;
-  position: absolute;
-  z-index: -1;
-  top: 65%;
-  left: 0%;
-}
-.bg5 {
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  z-index: -1;
-  top: 85%;
-  left: 7%;
-}
-.bg6 {
-  width: 90px;
-  height: 90px;
-  position: absolute;
-  z-index: -1;
-  top: 82%;
-  left: 79%;
+::placeholder {
+  font-size: 2.5em !important;
 }

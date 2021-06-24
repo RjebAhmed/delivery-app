@@ -1,25 +1,21 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>chat-list</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-
 
 
 
 <ion-content>
-
-<div *ngFor="let x of chatList">
-  <ion-item (click)="move(x.id)">
-    <ion-avatar slot="start">
-      <img src="..\assets\avatar.png">
-    </ion-avatar>
-    <ion-label>
-      <h3>  {{x.nom}}
-      </h3>
-      <p>dolor sit amet</p>
-    </ion-label>
-  </ion-item>
+  <ion-icon routerLink="/admin" name="arrow-back-circle-outline"></ion-icon>  
+<div class="content">
+  <div *ngFor="let x of chatList">
+    <ion-item (click)="move(x.id)">
+      <ion-avatar slot="start">
+        <img src="..\assets\avatar.png">
+      </ion-avatar>
+      <ion-label>
+        <h3>  {{x.nom}}
+        </h3>
+        <p>dolor sit amet</p>
+      </ion-label>
+    </ion-item>
+  </div>
 </div>
+
 </ion-content>

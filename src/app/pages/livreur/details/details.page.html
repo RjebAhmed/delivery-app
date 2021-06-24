@@ -1,9 +1,42 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>details</ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content [fullscreen]="true">
   <div #map id="map"></div>
+  <div class="det">
+    <div class="t">
+      <div class="tl">
+        <span class="gt">{{date[0]}}:{{date[1]}}</span><br />
+        <span class="pt">Delivery time</span>
+      </div>
+      <div class="tr">
+        <span class="gt"> {{total}}</span><br />
+        <span class="pt">Total</span>
+      </div>
+    </div>
+    <div class="bb">
+      <div class="bl">
+        <ion-avatar class="av">
+          <img [src]=" user.image | async" />
+        </ion-avatar>
+      </div>
+      <div class="bm">
+        <span class="gt">Telephone</span><br />
+        <span class="pt">{{user.tel}}</span>
+      </div>
+      <div class="brr">
+        <div class="call">
+          <ion-icon name="call"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-content>
+<ion-tab-bar slot="bottom">
+  <ion-tab-button routerLink="/livreur">
+    <ion-icon class="map" name="archive-outline"></ion-icon>
+    <ion-label>Commande</ion-label>
+  </ion-tab-button>
+  <ion-tab-button routerLink="/map">
+    <ion-icon name="location-outline"></ion-icon>
+    <ion-label>Map</ion-label>
+  </ion-tab-button>
+</ion-tab-bar>

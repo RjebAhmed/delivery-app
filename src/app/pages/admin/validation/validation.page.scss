@@ -101,24 +101,21 @@
   width: 100%;
   height: 59px;
   background-color: #ffe368;
-display: flex;
-font-size: 1.4rem;
-font-weight: 700;
-padding: 0 10%;
+  display: flex;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 0 10%;
 }
-.time{
+.time {
   flex: 1;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-
-
 }
-.date{
+.date {
   flex: 1;
-  
-  align-items: center;
 
+  align-items: center;
 }
 .contents {
   width: 100%;
@@ -202,11 +199,11 @@ padding: 0 10%;
 }
 .top-left {
   flex: 2;
- display: flex;
- justify-content: center;
- align-items: center;
- font-size: 1.5rem;
- color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: lightgray;
 }
 // **********#dc3545************************************************
 // <ion-button expand="full" (click)="accept(order.id)" color="success">
@@ -219,3 +216,28 @@ padding: 0 10%;
 //   <i class="fa fa-times"></i>
 // </div>
 // </ion-button>
+.empty img {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+}
+.empty .text {
+  text-align: center;
+  font-size: 1.5rem;
+  color: rgba(158, 157, 157, 0.782);
+  font-weight: 700;
+}
+.empty .btn {
+  width: 80%;
+  background-color: #11c0a0;
+  color: white;
+  height: 55px;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 20px;
+}

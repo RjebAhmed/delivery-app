@@ -35,11 +35,19 @@ export class MapPage implements OnInit {
         ref.where('etat', "==", "accepter")).snapshotChanges().subscribe(data => {
           data.map(e => {
             console.log(e.payload.doc.data()["loc"][0]);
-                L.marker([e.payload.doc.data()["loc"][0],e.payload.doc.data()["loc"][1]]).addTo(mymap);
+            this.db.collection("Users").doc(e.payload.doc.data()["userID"]).get().subscribe(u=>{
+            let m =    L.marker([e.payload.doc.data()["loc"][0],e.payload.doc.data()["loc"][1]]).addTo(mymap);
+              
+          m.bindPopup(`<b>Nom</b><br>_${u.data()["nom"]}<br><b>Telephone</b><br>_${u.data()["tel"]}
+          <br><b>Réferance commande</b><br>_${e.payload.doc.id}
+          <br><b>Prix totale </b><br>_${e.payload.doc.data()["total"]} DT
+          `);
+
+            })
 
           })
         })
-      let marker = L.marker([history.state.latitude, history.state.longitude]).addTo(mymap);
+      // let marker = L.marker([history.state.latitude, history.state.longitude]).addTo(mymap);
       // let marker2 = L.marker([position.coords.latitude+0.0001, position.coords.longitude]).addTo(mymap);
 
       // marker.bindPopup("<b>Hello world!</b><br>I am a popup.");

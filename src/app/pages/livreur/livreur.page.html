@@ -1,17 +1,19 @@
-
-<ion-toolbar color="#ffe368" padding-start="">
+<!-- <ion-toolbar color="#ffe368" padding-start="">
   <ion-title routerLink="/categories" slot="start"
     ><ion-icon name="caret-back-outline"></ion-icon
   ></ion-title>
   <ion-title slot="start" class="center"> Mes commandes </ion-title>
   <h1 slot="end">0</h1>
   <ion-icon slot="end" name="cart-outline" routerLink="/compte"></ion-icon>
-</ion-toolbar>
+</ion-toolbar> -->
 
 <ion-content>
   <div class="cont">
-    <div class="commande" *ngFor="let order of orders let j = index"
-    [attr.data-index]="j">
+    <div
+      class="commande"
+      *ngFor="let order of orders let j = index"
+      [attr.data-index]="j"
+    >
       <div class="top">
         <div class="date">{{orderTime[j]}}</div>
       </div>
@@ -47,7 +49,10 @@
       </div>
 
       <div class="buttom">
-        <div class="loc" (click)="location(order.userID,order.loc)">
+        <div
+          class="loc"
+          (click)="location(order.id)"
+        >
           <ion-icon name="location-outline"></ion-icon>localisation
         </div>
         <div class="price">{{order.total}} DT</div>
@@ -57,16 +62,15 @@
       </div>
     </div>
   </div>
-<!-- <button (click)="test()">aaaaaaaaaaaaaaaa</button> -->
-<!-- </ion-content>
- <ion-tabs>
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button routerLink="/livreur">
-      <ion-icon class="map" name="archive-outline"></ion-icon>
-      <ion-label>Commande</ion-label>
-    </ion-tab-button>
-    <ion-tab-button  routerLink="/map">
-      <ion-icon   name="location-outline"></ion-icon>
-      <ion-label>Map</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar> -->
+  <!-- <button (click)="test()">aaaaaaaaaaaaaaaa</button> -->
+</ion-content>
+<ion-tab-bar slot="bottom">
+  <ion-tab-button routerLink="/livreur">
+    <ion-icon class="map" name="archive-outline"></ion-icon>
+    <ion-label>Commande</ion-label>
+  </ion-tab-button>
+  <ion-tab-button routerLink="/map">
+    <ion-icon name="location-outline"></ion-icon>
+    <ion-label>Map</ion-label>
+  </ion-tab-button>
+</ion-tab-bar>

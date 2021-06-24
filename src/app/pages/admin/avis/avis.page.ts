@@ -26,7 +26,7 @@ getAvis(){
 
 
 
-      var d=day+"/"+mon+"/"+year+"  "
+      var d=day+":"+mon+":"+year+"  "
       return {
         nom:e.payload.doc.data()["nom"],
         satrs:e.payload.doc.data()["stars"],

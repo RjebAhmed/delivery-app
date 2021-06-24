@@ -277,3 +277,28 @@ body {
   color: #11c0a0;
 }
 
+.empty img{
+  width: 150px;
+  height: 150px;
+position: relative;
+left: 50%;
+transform: translate(-50%);
+}
+.empty .text{
+text-align: center;
+font-size: 1.5rem;
+color: rgba(158, 157, 157, 0.782);
+font-weight: 700;
+}
+.empty .btn{
+  width: 80%;
+  background-color: #11c0a0;
+  color: white;
+  height: 55px;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 20px;
+}

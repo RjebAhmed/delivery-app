@@ -37,23 +37,33 @@ export class LoginPage implements OnInit {
     if (this.email != "" && this.password != "") {
       this.auth.signInWithEmailAndPassword(this.email, this.password)
         .then(user => {
-          console.log("welcome");
-          this.db.collection("Users").doc(user.user.uid).ref.get()
+          if (this.email == "admin@gmail.com" && this.password == "adminadmin") {
+            console.log(user.user.uid);
+            
+            this.router.navigate(["/admin"])
+            
+            // console.log("admin");
+            
+
+          }
+          else{
+            this.db.collection("Users").doc(user.user.uid).ref.get()
             .then(doc => {
-              if (this.email == "admin@gmail.com" && this.password == "adminadmin") {
-                this.router.navigate(["/admin"])
-              }
+
               if (doc.exists) {
                 console.log("you're a simple user");
                 this.router.navigate(["/accueil"])
 
               }
               else {
-                console.log("you're admin or delivery man");
+                console.log("livreur");
                 this.router.navigate(["/livreur"])
 
               }
             })
+          }
+          console.log("welcome");
+  
 
         })
         .catch(err => {

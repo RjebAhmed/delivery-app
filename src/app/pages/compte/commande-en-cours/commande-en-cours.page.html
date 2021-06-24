@@ -2,7 +2,7 @@
   <ion-title routerLink="/categories" slot="start"
     ><ion-icon name="caret-back-outline"></ion-icon
   ></ion-title>
-  <ion-title slot="start" class="center"> Mes commandes </ion-title>
+  <ion-title slot="start" class="center"> Commandes en cours </ion-title>
   <h1 slot="end">0</h1>
   <ion-icon slot="end" name="cart-outline" routerLink="/compte"></ion-icon>
 </ion-toolbar>
@@ -10,45 +10,56 @@
 
 <ion-content>
   <div class="cont">
-    <div class="commande" *ngFor="let order of orders">
-      <div class="top">
-        <div class="date">{{order.date}}</div>
-        <div class="time">{{order.time}}</div>
+    <div *ngIf="orders.length==0" class="empty">
+      <div class="text">
+        Vous n'avez pas aucune commande
       </div>
-      <div class="contents">
-        <div class="left">
-          <div class="half"></div>
+      <img src="..\assets\icons8-empty-box-64.png" alt="">
+      <button routerLink="/categories" class="btn">Commandez maintenant</button>
+
+    </div>
+    <div *ngIf="orders.length!=0">
+      <div  class="commande" *ngFor="let order of orders" >
+        <div class="top">
+          <div class="date">{{order.date}}</div>
+          <div class="time">{{order.time}}</div>
         </div>
-        <div class="right">
-          <div
-            class="produit"
-            *ngFor="let item of order.items; let i = index"
-            [attr.data-index]="i"
-          >
-            <div class="prod">
-              <span style="display: none" class="price" #selector
-                >{{item.prix}}
-              </span>
-              <div class="title">
-                <img
-                  class="image"
-                  src="..\assets\icons8-sphere-48.png"
-                  alt=""
-                />
-                <span class="text">{{item.nom}}</span>
+        <div class="contents">
+          <div class="left">
+            <div class="half"></div>
+          </div>
+          <div class="right">
+            <div
+              class="produit"
+              *ngFor="let item of order.items; let i = index"
+              [attr.data-index]="i"
+            >
+              <div class="prod">
+                <span style="display: none" class="price" #selector
+                  >{{item.prix}}
+                </span>
+                <div class="title">
+                  <img
+                    class="image"
+                    src="..\assets\icons8-sphere-48.png"
+                    alt=""
+                  />
+                  <span class="text">{{item.nom}}</span>
+                </div>
+                <div class="description">{{item.autre}}</div>
               </div>
-              <div class="description">{{item.autre}}</div>
-            </div>
-            <div class="top-left">
-              <div class="qte" #selector2>{{item.quantite}}</div>
+              <div class="top-left">
+                <div class="qte" #selector2>{{item.quantite}}</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="buttom">
-        <ion-icon name="location-outline"></ion-icon> Update location
+  
+        <div class="buttom">
+          <ion-icon name="location-outline"></ion-icon> Update location
+        </div>
       </div>
     </div>
+    
   </div>
 </ion-content>

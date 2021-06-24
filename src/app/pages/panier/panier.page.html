@@ -52,6 +52,16 @@
     </div>
   </div> -->
   <div class="cont">
+    <div *ngIf="items.length==0" class="empty">
+      <div class="text">
+        Vous n'avez pas des commandes dens le panier
+      </div>
+      <img src="..\assets\icons8-shopping-cart-64.png" alt="">
+      <button routerLink="/categories" class="btn">Commandez maintenant</button>
+
+    </div>
+    <div *ngIf="items.length!=0">
+
     <div class="commande">
       <div class="top"></div>
       <div class="contents">
@@ -107,5 +117,6 @@
         <div class="price">{{total}} DT</div>
       </div>
     </div>
+  </div>
   </div>
 </ion-content>

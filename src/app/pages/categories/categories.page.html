@@ -4,34 +4,33 @@
   <ion-icon slot="end" name="cart-outline" routerLink="/panier"></ion-icon>
 </ion-toolbar> -->
 
-<ion-content>
+<!-- <ion-content>
   <div class="title">
     <span>Qu'est-ce que tu veux commander</span>
   </div>
   <div class="cont">
-<div class="l">
-  <div routerLink="fastfood" class="item ">
-    <div class="image">
-      <img src="..\assets\categ\fasdfood.png" alt="image not found" />
-    </div>
-    <p>fast food</p>
-  </div>
-  <div routerLink="facture" class="item ">
-    <div class="image">
-      <img src="..\assets\categ\bill.png" alt="image not found" />
-    </div>
-    <p>facture</p>
-  </div>
-</div>
     <div class="l">
-
-      <div routerLink="medicament" class="item ">
+      <div routerLink="fastfood" class="item">
+        <div class="image">
+          <img src="..\assets\categ\fasdfood.png" alt="image not found" />
+        </div>
+        <p>fast food</p>
+      </div>
+      <div routerLink="facture" class="item">
+        <div class="image">
+          <img src="..\assets\categ\bill.png" alt="image not found" />
+        </div>
+        <p>facture</p>
+      </div>
+    </div>
+    <div class="l">
+      <div routerLink="medicament" class="item">
         <div class="image">
           <img src="..\assets\categ\pillls.png" alt="image not found" />
         </div>
         <p>médicament</p>
       </div>
-      <div routerLink="fruits" class="item ">
+      <div routerLink="fruits" class="item">
         <div class="image">
           <img src="..\assets\categ\fruits.png" alt="image not found" />
         </div>
@@ -39,43 +38,50 @@
       </div>
     </div>
 
-   <div class="l">
-    <div routerLink="vegetables" class="item ">
-      <div class="image">
-        <img src="..\assets\categ\vegetable.png" alt="image not found" />
-      </div>
-      <p>Légumes</p>
-    </div>
-   
-
-    <div routerLink="produit-alimentaire" class="item ">
-      <div class="image">
-        <img src="..\assets\categ\prod.png" alt="image not found" />
-      </div>
-      <p>produit alimentaire</p>
-    </div>
-   </div>
     <div class="l">
-      <div routerLink="cigarette" class="item ">
+      <div routerLink="vegetables" class="item">
+        <div class="image">
+          <img src="..\assets\categ\vegetable.png" alt="image not found" />
+        </div>
+        <p>Légumes</p>
+      </div>
+
+      <div routerLink="produit-alimentaire" class="item">
+        <div class="image">
+          <img src="..\assets\categ\prod.png" alt="image not found" />
+        </div>
+        <p>produit alimentaire</p>
+      </div>
+    </div>
+    <div class="l">
+      <div routerLink="cigarette" class="item">
         <div class="image">
           <img src="..\assets\categ\cigarette.png" alt="image not found" />
         </div>
         <p>cigarette</p>
       </div>
-      <div routerLink="cafe" class="item ">
+      <div routerLink="cafe" class="item">
         <div class="image">
           <img src="..\assets\categ\café.png" alt="image not found" />
         </div>
         <p>café</p>
-      </div> 
+      </div>
     </div>
   </div>
   <div class="bg"></div>
   <div class="bg2"></div>
   <div class="bg3"></div>
   <div class="bg4"></div>
+</ion-content> -->
 
-
-
-
+<ion-content>
+  <div class="title">
+    <span>Qu'est-ce que tu veux commander</span>
+  </div>
+  <div class="content">
+    <div class="item" *ngFor="let item of items" routerLink="{{item.router}}">
+      <img src="{{item.image}}" alt="" />
+      <h1>{{item.nom}}</h1>
+    </div>
+  </div>
 </ion-content>

@@ -1,4 +1,87 @@
-#map{
-    height: 700px;
-    width: 100%;
+#map {
+  height: 800px;
+  width: 100%;
+}
+.map {
+  color: #11c0a0;
+  font-size: 2rem;
+}
+.det{
+  z-index: 999;
+  width: 84%;
+  
+  height: 170px;
+  background-color: #11c0a0;
+  position: absolute;
+  top: 68%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  
+}
+.t{
+  border-bottom: 2px solid rgba(119, 119, 119, 0.563);
+  height: 45%;
+  display: flex;
+  padding: 8% 2%;
+  line-height: 12px;
+}
+.tl{
+  flex: 1;
+}
+.tr{
+  flex: 1;
+  
+
+}
+.gt ion-icon{
+position: relative;
+top: -30%;  
+
+}
+.gt{
+display: flex;
+justify-content: center;
+font-size: 1.5rem !important;
+  font-weight: 700;
+}
+.pt{
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+font-size: 1.3rem !important;
+color: rgb(89, 88, 88);
+
   }
+.bb{
+  display: flex;
+  height: 100px;
+  line-height: 15px;
+
+}
+.bl{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+width: 30%;}
+.bm{
+padding-top: 7%;
+  width: 40%;
+}
+.brr{
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.call{
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  
+  background-color: rgba(119, 119, 119, 0.289);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+}
